@@ -1,0 +1,150 @@
+@import "../assets/scss/var.scss";
+
+.LoginWrapper {
+    height: 100vh;
+    overflow: hidden;
+}
+.LoginLeftSide {
+    background-color: $primaryColor;
+    height: 100vh;
+    padding: 60px 60px;
+    position: relative;
+    &::before {
+        content: "";
+        background-image: url("../assets/images/Login.png");
+        background-position: right bottom;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-repeat: no-repeat;
+        right: 0;
+        bottom: 0;
+        box-shadow: 0px 4px 82px rgba(26, 26, 26, 0.6);
+    }
+    h3 {
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 48px;
+        color: $whiteColor;
+        max-width: 293px;
+        margin: 24px 0;
+    }
+    .contact {
+        display: inline-block;
+        background: $whiteColor;
+        border-radius: 4px;
+        padding: 4px 8px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        color: $primaryColor;
+        height: 32px;
+    }
+}
+
+.LoginRightSide {
+    // background: linear-gradient(to right, #f9804c 10%, #1e1e20 90%, #f9804c 10%);
+    // // linear-gradient(to right, #f9804c 10%, #1e1e20 80%, #f9804c 10%),
+    // // linear-gradient(to right, #f9804c 10%, #1e1e20 0%, #f9804c 10%);
+
+    background-color: $mainContentBg;
+    height: 100vh;
+    border-left: 1px solid $inputBorder;
+    position: relative;
+    box-shadow: 0px 4px 82px rgba(26, 26, 26, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    .topLeftBg {
+        background: #f9804c;
+        height: 200px;
+        width: 200px;
+        position: absolute;
+        top: -31px;
+        right: -30px;
+        opacity: 0.3;
+        filter: blur(162px);
+    }
+    .topRightBg {
+        background: #f9804c;
+        height: 200px;
+        width: 200px;
+        position: absolute;
+        top: -31px;
+        left: -30px;
+        opacity: 0.3;
+        filter: blur(162px);
+    }
+    .bottomLeftBg {
+        background: #f9804c;
+        height: 200px;
+        width: 200px;
+        position: absolute;
+        bottom: -31px;
+        left: -30px;
+        opacity: 0.3;
+        filter: blur(162px);
+    }
+    .bottomRightBg {
+        background: #f9804c;
+        height: 200px;
+        width: 200;
+        position: absolute;
+        bottom: -31px;
+        right: -30px;
+        opacity: 0.3;
+        filter: blur(162px);
+    }
+
+    h5 {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 40px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+
+        color: #f5f5f5;
+    }
+    .loginForm {
+        width: 400px;
+        margin: auto;
+    }
+    label {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        color: $whiteColor;
+    }
+
+    input {
+        padding: 14px 16px;
+
+        height: 52px;
+
+        background: #2b2b2b;
+        border: 1px solid #3a3a3a;
+        box-shadow: none;
+        border-radius: 8px;
+        color: $whiteColor;
+        &:focus {
+            background: #2b2b2b;
+            border: 1px solid #3a3a3a;
+            box-shadow: none;
+            color: $whiteColor;
+        }
+    }
+    button {
+        padding: 14px 16px;
+
+        width: 400px;
+        height: 52px;
+        border: 1px solid $primaryColor;
+        background: $primaryColor;
+        &:hover {
+            background: $primaryColor;
+            border: 1px solid $primaryColor;
+        }
+    }
+}

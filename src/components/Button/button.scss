@@ -1,0 +1,51 @@
+.primaryBtn {
+    height: 44px;
+    min-width: fit-content;
+    background: #f9804c;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #ffffff;
+    letter-spacing: 0.1px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+        background: #fa9266;
+    }
+    &.lg {
+        height: 52px;
+    }
+    &.fullWidth {
+        width: 100%;
+    }
+}
+
+.ripple > span {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.16);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    border-radius: 50%;
+    animation: rippleffect 1s linear infinite;
+}
+
+@keyframes rippleffect {
+    0% {
+        height: 0;
+        width: 0;
+    }
+    50% {
+        height: 500px;
+        width: 500px;
+        opacity: 0;
+    }
+    100% {
+        height: 0;
+        width: 0;
+    }
+}

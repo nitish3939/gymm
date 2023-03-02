@@ -1,0 +1,16 @@
+* {
+    font-family: $inter;
+}
+
+body {
+    font-weight: 400;
+    font-size: 0.875rem;
+    color: $bodyColor;
+    font-family: $inter;
+    overflow: overlay;
+    background: $bodyBg;
+    line-height: 1.4;
+}
+.transition {
+    transition: all 0.3s ease-in-out;
+}

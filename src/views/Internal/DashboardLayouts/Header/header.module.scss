@@ -1,0 +1,222 @@
+@import "./../../assets/scss/var.scss";
+@import "./../../assets/scss/reset.scss";
+
+.dashboardHeaderWrapper {
+    height: 60px;
+    background: $sidebarBg;
+    box-shadow: 0px 4px 12px $boxshodow1;
+    display: flex;
+    align-items: center;
+    padding: 0 20px 0 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+.hamburgerBtn {
+    font-size: 24px;
+    color: $bodyColor;
+    margin-left: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    min-width: 60px;
+    max-width: 60px;
+    height: 60px;
+    &:hover {
+        @extend .transition;
+        background: $cancelBtn;
+    }
+    &:focus {
+        @extend .transition;
+        // background: $placeholder1;
+    }
+}
+.logo {
+    display: block;
+    height: 40px;
+    padding: 3px 0px 0px 4px;
+    img {
+        min-width: 126px;
+        max-width: 126px;
+    }
+}
+.headerRight {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    height: 100%;
+}
+.notifiactionWrapper {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    @extend .transition;
+
+    &:hover {
+        @extend .transition;
+        background: $cancelBtn;
+    }
+    &:focus {
+        @extend .transition;
+        background: $placeholder1;
+    }
+    .notificationHint {
+        width: 11px;
+        height: 11px;
+        border-radius: 100%;
+        background: #f9804c;
+        border: solid 2px #2b2b2b;
+        top: 19px;
+        right: 19px;
+        position: absolute;
+    }
+    .bellIcon {
+        font-size: 24px;
+        color: $bodyColor;
+    }
+}
+
+.userInfoWrapper {
+    background:#383838;;
+    height: 100%;
+    display: flex;
+    padding: 8px;
+    position: relative;
+   min-width: 198px;
+    @extend .transition;
+    max-width: 200px;
+    &:hover {
+        background: $cancelBtn;
+        @extend .transition;
+    }
+    &:focus {
+        background: $placeholder1;
+        @extend .transition;
+    }
+    .userInfoInner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        cursor: pointer;
+        width: 100%;
+
+        .profileInfo {
+            min-width: 40px;
+            height: 40px;
+            max-width: 40px;
+            border-radius: 100%;
+            object-fit: cover;
+        }
+        .userInfoContent {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            cursor: pointer;
+            margin-left: -3px;
+        }
+        .companyName {
+            font-weight: 600;
+            font-size: 14px;
+            color: $bodyColor;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .userName {
+            font-weight: 500;
+            font-size: 12px;
+            color: $subtitleColor;
+            margin-top: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .arrowDown {
+            font-size: 24px;
+            color: $bodyColor;
+        }
+    }
+
+    .profileDropdownWrapper {
+        background: $bodyBg;
+        border: 1px solid $inputBorder;
+        box-shadow: 0px 4px 12px $dropdownShadow;
+        border-radius: 8px;
+        width: 242px;
+        position: absolute;
+        top: calc(100% + 1px);
+        right: 0;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(20px);
+        @extend .transition;
+        .profileInfo {
+            padding: 12px;
+            border-bottom: 1px solid $inputBorder;
+            .title {
+                font-weight: 600;
+                font-size: 14px;
+                color: $bodyColor;
+            }
+            .subTitle {
+                font-weight: 500;
+                font-size: 12px;
+                color: $subtitleColor;
+                margin-top: 4px;
+            }
+        }
+        .otherLinksWrapper {
+            padding: 12px 12px 0 12px;
+            border-bottom: 1px solid $inputBorder;
+            .subHeading {
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 1.7;
+                color: $subtitleColor;
+            }
+
+            .link {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                width: 100%;
+            }
+            .selectThemeWrapper {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+            }
+        }
+        .logoutWrapper {
+            padding: 12px;
+            font-weight: 500;
+            font-size: 14px;
+            color: $primaryColor;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            .logoutIcon {
+                font-size: 24px;
+                color: $primaryColor;
+            }
+        }
+    }
+    &:hover {
+        .profileDropdownWrapper {
+            @extend .transition;
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}

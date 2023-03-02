@@ -1,0 +1,61 @@
+.fromGroup {
+    margin-bottom: 40px;
+}
+.label {
+    display: block;
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: $blackColor;
+}
+
+.formControl {
+    height: 52px;
+    background: $whiteColor;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 400;
+    font-size: 14px;
+    color: $blackColor;
+    border: 1px solid $whiteColor;
+    outline: 1px solid $grayColor1;
+    @extend .transition;
+    width: 100%;
+    &:hover {
+        outline: 1px solid $grayColor3;
+    }
+    &:focus {
+        border: 1px solid $primaryColor;
+        outline: 1px solid $primaryColor;
+        @extend .transition;
+    }
+    &::placeholder {
+        font-size: 14px;
+        color: $grayColor3;
+    }
+}
+textarea.formControl {
+    height: 160px;
+    resize: none;
+}
+
+.msg {
+    font-weight: 400;
+    font-size: 12px;
+    margin: 8px 0;
+    &.err {
+        color: $redMain;
+    }
+}
+
+.invalid {
+    outline: none;
+    .formControl {
+        color: $redMain;
+        border: solid 1px $redMain;
+        outline: solid 1px $redMain;
+    }
+    .msg {
+        color: $redMain;
+    }
+}

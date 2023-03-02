@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/css2?family=Material+Icons+Outlined");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+textarea,
+input {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+}
+a {
+    text-decoration: none;
+    color: currentColor;
+}
+img {
+    max-width: 100%;
+    display: inherit;
+}
+ul {
+    list-style: none;
+}
+.overflowHidden {
+    overflow: hidden;
+}
+
+:focus {
+    border: none;
+    outline: none;
+}

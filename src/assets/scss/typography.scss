@@ -1,0 +1,76 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.4;
+}
+
+.h1 {
+    font-weight: 600;
+    font-size: 28px;
+    color: $blackColor;
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+    @include mediaQuery(xlg) {
+        font-size: 32px;
+    }
+}
+
+.h2 {
+    font-weight: 600;
+    font-size: 28px;
+    color: $blackColor;
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+    @include mediaQuery(xlg) {
+        font-size: 32px;
+    }
+}
+.h3 {
+    font-weight: 500;
+    font-size: 20px;
+    color: $blackColor;
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+    @include mediaQuery(xlg) {
+        font-size: 24px;
+    }
+}
+.h4 {
+    font-weight: 500;
+    font-size: 16px;
+    color: $blackColor;
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+}
+.subhead1,
+.subhead2,
+.subhead3 {
+    font-weight: 400;
+    font-size: 16px;
+    color: $blackColor;
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+}
+.bodyTxt {
+    font-weight: 400;
+    font-size: 14px;
+    color: $grayColor;
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+}
+.chipTxt {
+    font-weight: 500;
+    font-size: 14px;
+    color: $grayColor;
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+}
+p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.8;
+    color: $grayColor;
+}

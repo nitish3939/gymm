@@ -1,0 +1,42 @@
+* {
+    font-family: $poppins;
+}
+
+body {
+    font-weight: 400;
+    font-size: 0.875rem;
+    color: $blackColor;
+    font-family: $poppins;
+    overflow: overlay;
+}
+
+.transition {
+    transition: all 0.3s ease-in-out;
+}
+
+.containerWrapper {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
+    @include mediaQuery(sm) {
+        padding: 0 20px;
+    }
+    @include mediaQuery(md) {
+        padding: 0 24px;
+    }
+    @include mediaQuery(xlg) {
+        padding: 0 50px;
+    }
+}
+.section {
+    padding: 50px 0;
+    scroll-snap-align: start;
+    @include mediaQuery(xlg) {
+        padding: 100px 0;
+    }
+}
+
+.containerFull {
+    width: 100%;
+}

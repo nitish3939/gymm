@@ -1,0 +1,719 @@
+@import "./var.scss";
+.fromGroup {
+    margin-bottom: 20px;
+}
+.label1,
+.label {
+    display: block;
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: $bodyColor;
+}
+
+.label1 {
+    font-size: 12px;
+    color: $label1;
+    margin-bottom: 8px;
+}
+
+.formControl1,
+.formControl {
+    height: 52px;
+    background: $inputBg;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 400;
+    font-size: 14px;
+    color: $whiteColor;
+    @extend .transition !optional;
+    border: 1px solid transparent;
+    width: 100%;
+    ~ .material-icons {
+        @extend .transition;
+    }
+    &:hover {
+        border: 1px solid $inputBorder;
+    }
+
+    &:focus {
+        border: 1px solid $inputBorder;
+        @extend .transition;
+        ~ .material-icons {
+            color: $whiteColor;
+            @extend .transition;
+        }
+    }
+
+    &::placeholder {
+        font-size: 14px;
+        color: $placeholder;
+    }
+}
+.formControl1 {
+    border: 1px solid $inputBorder1;
+    height: 40px;
+    color: $label1;
+    &:hover {
+        border: 1px solid $inputBorder1;
+        background: $inputBg1;
+    }
+    &::placeholder {
+        font-size: 14px;
+        color: $placeholder1;
+    }
+}
+textarea.formControl1,
+textarea.formControl {
+    height: 160px;
+    resize: none;
+}
+// textarea.formControl1 {
+//     border: 1px solid $placeholder1;
+// }
+
+.ModalFormTextarea textarea:focus {
+  background-color: #2b2b2b;
+  outline: 0;
+  box-shadow: none;
+  color: #B6B6B6;
+  border: 1px solid #7A7A7A;
+}
+select.formControl1 {
+}
+
+// .msg {
+//     font-weight: 400;
+//     font-size: 12px;
+//     margin: 8px 0;
+//     &.err {
+//         color: $redMain;
+//     }
+// }
+
+// .invalid {
+//     outline: none;
+//     .formControl {
+//         color: $redMain;
+//         border: solid 1px $redMain;
+//         outline: solid 1px $redMain;
+//     }
+//     .msg {
+//         color: $redMain;
+//     }
+// }
+
+.radioContainer {
+    display: flex;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 0;
+    min-height: 44px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight: 500;
+    font-size: 12px;
+    color: $label1;
+    align-items: center;
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .checkmark {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        border: solid 2px $label1;
+        border-radius: 50%;
+        &:after {
+            content: "";
+            position: absolute;
+            display: none;
+            top: 2px;
+            left: 2px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: $radioBg;
+        }
+    }
+    input:checked ~ .checkmark {
+        border: solid 2px $radioBg;
+    }
+    input:checked ~ .checkmark:after {
+        display: block;
+    }
+}
+.dietFoodtypeDropDown{
+    width: 131px;
+}
+.customDropdownWrapper {
+    border: 1px solid $inputBorder1;
+    border-radius: 8px;
+    width: fit-content;
+    height: 40px;
+    padding: 8px 12px 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    color: $label1;
+    min-width: 100px;
+    cursor: pointer;
+    @extend .transition;
+    
+    &:hover {
+        background: $inputBg1;
+        @extend .transition;
+    }
+    &:focus {
+        border: 1px solid $customDropFocusBorder;
+        color: $customDropFocus;
+        @extend .transition;
+    }
+
+    .textLabel {
+    }
+}
+
+.selectDropdownBtn {
+    border: 1px solid $inputBorder1;
+    border-radius: 8px;
+    width: fit-content;
+    height: 40px;
+    padding: 8px 12px 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 14px;
+    color: $label1;
+    min-width: 100px;
+    cursor: pointer;
+    background: transparent;
+    position: relative;
+    @extend .transition;
+    // min-width: 160px;
+    min-width: 83px;
+    // max-width: 300px;
+    // width: 100%;
+
+    &:hover{
+        background-color: $inputBg1;
+    }
+    &.active{
+        border: $selectDropdownBtnFocusBg ;
+color: $selectDropdownBtnFocusBgcolor;
+    }
+    &.active:hover{
+        background: $selectDropdownBtnFocushoverBg;
+    }
+    .selectDropdownBtnInner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        user-select: none;
+        flex-grow: 1;
+    }
+    .selectedText {
+    }
+    .selectDropdown {
+        text-align: left;
+        background: $inputBg;
+        border: 1px solid $inputBorder;
+        color: $white-80;
+        box-shadow: 0px 4px 12px $dropdownShadow;
+        border-radius: 8px;
+        max-width: 240px;
+        width: 100%;
+        max-height: 60vh;
+        overflow-y: auto;
+        top: calc(100% + 8px);
+        right: 0;
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        @extend .transition;
+        transform: translateY(10px);
+        z-index: 2;
+
+        
+
+
+        .options {
+            padding: 12px;
+            min-height: 44px;
+            font-weight: 500;
+            font-size: 14px;
+            @extend .transition;
+            color: $white-80;
+            // &:last-child {
+            //     color: $customDropFocus;
+            // }
+            &:hover {
+                background: $inputBg1;
+                @extend .transition;
+               
+            }
+        }
+        .static {
+            &:hover {
+                background: $inputBg;
+                color: $white-80;
+            }
+        }
+        .custom {
+            color: $customDropFocus;
+            border-top: 1px solid $inputBorder;
+        }
+        .selected {
+            color: $customDropFocus;
+        }
+    }
+    // &:hover {
+    //     background: $inputBg1;
+    //     @extend .transition;
+    //     .selectDropdown {
+    //         @extend .transition;
+    //         visibility: visible;
+    //         opacity: 1;
+    //         transform: translateY(0);
+    //     }
+    // }
+    &.active,
+    // &:hover,
+    // &:focus {
+    //     border: 1px solid $customDropFocusBorder;
+    //     color: $customDropFocus;
+    //     background: #3d2c26;
+    // }
+    &.active {
+        .selectDropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            width: 240px;
+        }
+    }
+    &.smallDropdown {
+        height: 32px;
+        min-width: 68px;
+        gap: 4px;
+        padding: 8px 8px;
+    }
+}
+
+.headerSearchWrapper .selectDropdownBtn.active .formControl{
+  color: #F9804C !important;
+  border: 1px solid #F9804C !important;
+}
+
+.headerSearchWrapper .selectDropdownBtn.active .formControl:hover{
+  background: #3D2C26 !important;
+ 
+}
+.headerSearchWrapper .selectDropdownBtn .formControl:hover{
+  background: #383838;
+ 
+}
+
+.headerSearchWrapper .selectDropdownBtn.active {
+  border: 0px  !important;
+color: #F9804C !important;
+background: #3d2c2600 !important;
+}
+
+.headerSearchWrapper .selectDropdownBtn.active .formControl:active{
+   
+color: #F9804C !important;
+.member-search .searchIcon {
+  top: 10px;
+  color: #F9804C !important;
+}
+}
+  .headerSearchWrapper .selectDropdownBtn.active .formControl::placeholder {
+  color: #F9804C !important;
+  }
+
+/* Customize the label (the container) */
+.checkboxContainer {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 24px;
+    height: 24px;
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+    .checkmark {
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        height: 18px;
+        width: 18px;
+        border: solid 2px $label1;
+        border-radius: 4px;
+    }
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+    input:checked ~ .checkmark:after {
+        display: block;
+    }
+    .checkmark:after {
+        // left: 4px;
+        // top: 1px;
+        // width: 4px;
+        // height: 8px;
+        // border: solid $label1;
+        // border-width: 0 2px 2px 0;
+        // -webkit-transform: rotate(45deg);
+        // -ms-transform: rotate(45deg);
+        // transform: rotate(45deg);
+        
+    }
+}
+
+.cancelBtn {
+    background: $cancelBtn;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 500;
+    font-size: 14px;
+    color: $whiteColor;
+    height: 40px;
+    cursor: pointer;
+}
+.submitBtn {
+    background: $primaryColor;
+    border-radius: 8px;
+    height: 40px;
+    padding: 8px 16px;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.1px;
+    color: $whiteColor;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.checkboxContainer .checkmark:focus {
+   
+    border: solid 2px #F9804C;
+   
+    background: #F9804C;
+  }
+
+  .checkboxContainer .checkmark:focus:after{
+    content: '';
+display: block;
+position: absolute;
+top: -1px;
+left: 4px;
+width: 6px;
+height: 14px;
+border: solid #1e1e20;
+  border-top-width: medium;
+  border-right-width: medium;
+  border-bottom-width: medium;
+  border-left-width: medium;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+  }
+
+ .enquiryCheckBoxPadd tr th{
+    padding-left: 23px;
+ } 
+ .enquiryCheckBoxPadd tr td{
+    padding-left: 23px;
+ } 
+ .dropDownIfFirst .selectDropdown{
+    left: 0px;
+ }
+
+
+
+ .customDropdownWithSearch.selectDropdownBtn {
+    border-radius: 8px;
+    height: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 14px;
+    color: #b6b6b6;
+    cursor: pointer;
+    background: transparent;
+    position: relative;
+    min-width: 320px;
+    border: 0;
+  }
+  .customDropdownWithSearch  .arrowDropWithSearch{
+    right: 28px;
+    position: relative;
+  }
+  .customDropdownWithSearch  .imgWithName{
+    margin-top: -4px;
+margin-left: -14px;
+gap: 8px;
+display: flex;
+  }
+  .customDropdownWithSearch .userImg{
+    height: 24px;
+width: 24px;
+border-radius: 50%;
+object-fit: cover;
+display: inline;
+border: 0;
+  }
+  .customDropdownWithSearch .selectDropdown{
+    max-width: 320px;
+    min-width: 100%;
+    padding: 8px 0px 8px 0px;
+  }
+  .customDropdownWithSearch .selectDropdown .options {
+    padding: 15px 0px 0px 15px;
+    height: 44px;
+  }
+  .calendarIcon{
+    position: relative;
+    left: 10px;
+    top: -33px;
+  }
+  .form-control.datePickerClass{
+    // padding: 8px 40px !important;
+    padding: 8px 0px 8px 40px !important;
+    z-index: 1;
+position: relative;
+  }
+  .react-datepicker__current-month.react-datepicker__current-month--hasYearDropdown.react-datepicker__current-month--hasMonthDropdown {
+    display: none;
+  }
+  .react-datepicker__navigation.react-datepicker__navigation--previous {
+    display: none;
+  }
+  .react-datepicker__navigation.react-datepicker__navigation--next {
+    display: none;
+  }
+  .react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle::before, .react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle::after {
+    
+    display: none;
+  }
+  .react-datepicker {
+    width: 270px;
+    height: auto;
+    background: #403F3F !important;
+    border: 1px solid #7A7A7A !important;
+    box-shadow: 0px 4px 12px #1A1A1A;
+    border-radius: 8px !important;
+  }
+  .react-datepicker__month-container {
+    width: 100%;
+background: #403F3F !important;
+border-radius: 15px 15px 0px 0px;
+border-bottom: 1px solid #7A7A7A;
+padding-bottom: 10px;
+  }
+  .react-datepicker__header {
+    background: #403F3F !important;
+  }
+  .react-datepicker__month-select {
+    width: 126px;
+    height: 40px;
+    border: 1px solid #7A7A7A;
+    border-radius: 8px;
+    background: #403F3F;
+    padding: 8px 14px 8px 12px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #B6B6B6;
+  }
+  .react-datepicker__header:not(.react-datepicker__header--has-time-select) {
+    border-radius: 3.3rem !important;
+    border: none;
+  }
+  .react-datepicker__day-names {
+    margin-top: 18px;
+  }
+  .react-datepicker__day-name {
+    color: #F5F5F5 !important;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .react-datepicker__day {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    color: #F5F5F5 !important;
+  }
+  .react-datepicker__header__dropdown.react-datepicker__header__dropdown--select {
+    margin-top: 20px;
+  }
+  .react-datepicker__year-select {
+    width: 96px;
+    height: 40px;
+    border: 1px solid #7A7A7A;
+    border-radius: 8px;
+    background: #403f3f !important;
+    padding: 8px 14px 8px 12px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #B6B6B6;
+  }
+  .react-datepicker__day:hover, .react-datepicker__month-text:hover, .react-datepicker__quarter-text:hover, .react-datepicker__year-text:hover {
+    border-radius: 0.3rem;
+    background-color: #f9804c !important;
+  }
+  .react-datepicker__day--selected, .react-datepicker__day--in-selecting-range, .react-datepicker__day--in-range, .react-datepicker__month-text--selected, .react-datepicker__month-text--in-selecting-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--selected, .react-datepicker__quarter-text--in-selecting-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--selected, .react-datepicker__year-text--in-selecting-range, .react-datepicker__year-text--in-range {
+    background-color: #f9804c !important;
+    color: #fff;
+  }
+  .react-datepicker__day--keyboard-selected, .react-datepicker__month-text--keyboard-selected, .react-datepicker__quarter-text--keyboard-selected, .react-datepicker__year-text--keyboard-selected {
+  
+    background-color: #f9804c;
+}
+.react-datepicker__year-dropdown-container--select, .react-datepicker__month-dropdown-container--select, .react-datepicker__month-year-dropdown-container--select, .react-datepicker__year-dropdown-container--scroll, .react-datepicker__month-dropdown-container--scroll, .react-datepicker__month-year-dropdown-container--scroll {
+    display: inline-block;
+    margin: 0 5px !important;
+  }
+  .clearDateBtn{
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 24px;
+color: #FFFFFF;
+width: 68px;
+height: 40px;
+background: #545454;
+border-radius: 8px;
+  }
+  .applyDateBtn{
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 24px;
+letter-spacing: 0.1px;
+color: #FFFFFF;
+padding: 8px 16px;
+width: 71px;
+height: 40px;
+background: #F9804C;
+border-radius: 8px;
+
+}
+.react-datepicker__day--keyboard-selected, .react-datepicker__month-text--keyboard-selected, .react-datepicker__quarter-text--keyboard-selected, .react-datepicker__year-text--keyboard-selected {
+  
+  background-color:#F9804C !important;
+  
+}
+.datePickerModal #DashboardSmsModal {
+   
+    top: -100px;
+  }
+  .react-datepicker__children-container {
+    width: auto !important;
+    
+    height: auto;
+  }
+  .datePickerChildren{
+    padding: 20px 0px 12px 0px;
+    position: relative;
+    right: -50px;
+    margin: 0 auto;
+  }
+  .twoBtnUpper{
+
+  }
+ .CustomCalendarDatePicker .ModalFormInputField .form-control {
+    min-width: auto !important;
+    max-width: 100%;
+}
+.CustomCalendarDatePicker {
+    height: 40px;
+} 
+.CustomCalendarDatePicker .calendarIcon {
+    position: relative;
+    left: -32px;
+    top: -32px;
+    color: #B6B6B6;
+  }
+  .CustomCalendarDatePicker select{
+    appearance: none;
+    background-image: url("../images/arrow-down-grey.svg") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 1rem top 50% !important;
+    background-size: 0.8rem auto !important;
+  }
+  .react-datepicker__month-container select{
+    appearance: none;
+    background-image: url("../images/arrow-down-grey.svg") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 1rem top 50% !important;
+    background-size: 0.8rem auto !important;
+  }
+  .CustomCalendarDatePicker .datePickerChildren {
+    
+    position: relative;
+    right: -8px;
+    margin: 0 auto;
+  }
+  .sidebarFoldState .CustomCalendarDatePicker .calendarIcon {
+    position: relative;
+    left: -60px;
+    top: -32px;
+    color: #B6B6B6;
+}
+.CustomCalendarDatePicker .datePickerClass{
+    background-image: url(http://localhost:3000/static/media/arrow-down-grey.a42b3e584e09edcbb947.svg) !important;
+background-repeat: no-repeat !important;
+background-position: right 1rem top 50% !important;
+background-size: 0.8rem auto !important;
+}
+
+.searchBtnInner{
+  position: absolute;
+right: 6px;
+top: 6px;
+display: flex;
+gap: 8px;
+ .BtnInner1, .BtnInner2 { 
+  padding: 10px 24px;
+}
+}

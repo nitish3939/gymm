@@ -1,0 +1,171 @@
+@import "./../assets/scss/var.scss";
+
+.dashboardSearch {
+    margin: 0;
+}
+.filterWrapper {
+    margin-left: auto;
+    .sortBy {
+        margin-right: 12px;
+        font-weight: 500;
+        font-size: 14px;
+        color: $subtitleColor;
+    }
+}
+.membersChartOverviewWrapper,
+.membersOverviewWrapper,
+.followUpsWrapper {
+    h3 {
+        color: $placeholder;
+        margin-bottom: 8px;
+        line-height: 16px;
+    }
+}
+
+.filterWrapperTop {
+    margin-bottom: 40px;
+}
+
+.membersCardOverviewWrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    .membersCardList {
+        background: $blue3;
+        border-radius: 8px;
+        .membersHeading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: $blue4;
+            border-radius: 8px;
+            padding: 12px 12px 12px 12px;
+        }
+
+        .membersContent {
+            padding: 12px 12px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            .membersContentList {
+                padding: 4px;
+                &:nth-child(1) {
+                    border-right: solid 1px $border1;
+                }
+                &:nth-child(2) {
+                    padding-left: 12px;
+                }
+                .num {
+                    font-weight: 700;
+                    font-size: 24px;
+                    color: $whiteColor;
+                }
+                .text {
+                    font-weight: 600;
+                    font-size: 14px;
+                    color: $blue5;
+                    margin-top: 8px;
+                }
+            }
+        }
+        &:nth-child(2) {
+            background: $green3;
+            .membersHeading {
+                background: $green4;
+            }
+        }
+        &:nth-child(3) {
+            background: $orange3;
+            .membersHeading {
+                background: $orange4;
+            }
+        }
+        &:nth-child(4) {
+            background: $green5;
+            .membersHeading {
+                background: $green6;
+            }
+        }
+        &:nth-child(5) {
+            background: $purple;
+            .membersHeading {
+                background: $purple1;
+            }
+        }
+        &:nth-child(6) {
+            background: $green3;
+            .membersHeading {
+                background: $green4;
+            }
+        }
+        &:nth-child(7) {
+            background: $orange5;
+            .membersHeading {
+                background: $orange2;
+            }
+        }
+        &:nth-child(8) {
+            background: $blue6;
+            .membersHeading {
+                background: $blue7;
+            }
+        }
+        &:nth-child(9) {
+            background: $orange5;
+            .membersHeading {
+                background: $orange2;
+            }
+        }
+    }
+
+    .membersCardList1 {
+        .membersHeading {
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            h2 {
+                padding: 12px;
+                &:nth-child(1) {
+                    border-right: solid 1px $border1;
+                }
+            }
+        }
+        .membersContent {
+            padding: 0;
+            .membersContentList {
+                padding: 20px 12px;
+            }
+        }
+        .membersContent1 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            &:nth-child(1) {
+                border-right: solid 1px $border1;
+            }
+            .membersContentList {
+                &:nth-child(1) {
+                    border: none;
+                }
+            }
+        }
+    }
+}
+
+.membersHeading h2{
+    margin-bottom: 0;
+}
+.membersContent .membersContentList .text{
+    line-height: 24px;
+color: rgba(255, 255, 255, 0.8);
+margin-top: 4px !important;
+}
+.helpSupport{
+    font-weight: 500;
+font-size: 12px;
+line-height: 20px;
+text-align: right;
+text-decoration-line: underline;
+color: #B6B6B6;
+margin-top: 16px;
+}

@@ -1,0 +1,160 @@
+@import "./../../../assets/scss/var.scss";
+@import "./../../../assets/scss/mixin.scss";
+@import "./../../../assets/scss/reset.scss";
+
+.footerWrapper {
+    background: #1b1b1b;
+    @include mediaQuery(md) {
+        padding: 50px 0 20px;
+    }
+    .h4 {
+        color: #ffffff;
+        margin-bottom: 12px;
+    }
+    .footerBotLeft {
+        margin-bottom: 40px;
+    }
+    .footerTop {
+        margin-bottom: 40px;
+        @include mediaQuery(md) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 40px;
+        }
+        .footerLogo {
+            display: inline-block;
+            .logoImg {
+                max-height: 40px;
+                @include mediaQuery(md) {
+                    max-height: 60px;
+                }
+            }
+        }
+        .h3 {
+            color: #fff;
+            margin-bottom: 12px;
+            @include mediaQuery(md) {
+                margin-bottom: 20px;
+            }
+        }
+
+        .footerSubscriber {
+            display: none;
+            @include mediaQuery(md) {
+                display: block;
+            }
+
+            .footerSubscriberForm {
+                .fromGroup {
+                    display: flex;
+                    gap: 12px;
+                }
+                .formControl {
+                    outline: transparent;
+                    @extend .transition;
+                    &:focus {
+                        outline: 1px solid #f9804c;
+                        @extend .transition;
+                    }
+                }
+                .subscribeBtn {
+                    padding: 12px 32px;
+                }
+            }
+        }
+    }
+    .contactInfo {
+        li {
+            margin-bottom: 16px;
+        }
+        .email,
+        .mob {
+            position: relative;
+            padding-left: 40px;
+            &::before {
+                position: absolute;
+                content: "\e0e1";
+                left: 0;
+                font-family: $iconFornFamily;
+                color: #f9804c;
+                font-size: 28px;
+                top: -2px;
+            }
+            .link {
+                font-size: 16px;
+            }
+        }
+        .mob {
+            .link {
+                display: block;
+            }
+            &::before {
+                content: "\e61d";
+            }
+        }
+    }
+    .link {
+        color: #c6c6c6;
+        font-weight: 400;
+        font-size: 14px;
+    }
+    .footerBotRight {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 40px;
+    }
+    .footerNavSec {
+        .footerNav {
+            li {
+                margin-bottom: 12px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    .copyright {
+        margin-top: 40px;
+        @include mediaQuery(lg) {
+            margin-top: 40px;
+        }
+        .copyrightLink {
+            font-weight: 400;
+            font-size: 14px;
+            color: #c6c6c6;
+            display: block;
+            line-height: 2;
+            position: relative;
+            @include mediaQuery(sm) {
+                &::after {
+                    position: absolute;
+                    content: "";
+                    width: 1px;
+                    height: 14px;
+                    background: #c6c6c6;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                }
+                &:last-child {
+                    &::after {
+                        background: none;
+                    }
+                }
+                display: inline-block;
+                padding: 0 12px;
+                &:first-child {
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+    .footerBottom {
+        @include mediaQuery(md) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 40px;
+        }
+    }
+}

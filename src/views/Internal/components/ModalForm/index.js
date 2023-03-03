@@ -78,6 +78,467 @@ function ModalForm(props) {
 
     return (
         <>
+
+               {/* =====================Add New Sale modal from ============= */}
+         {props.name == 'addNewSaleModal' &&
+                <Modal
+                    {...props}
+
+
+                    size="lg"
+                    aria-labelledby="contained-modal-title-vcenter"
+                    centered
+                    id='DashboardSmsModal'
+                >
+                    <Modal.Header className='ModalFormHeader' >
+                        <Modal.Title id="contained-modal-title-vcenter">
+                            <span className="material-icons"> add</span>  Add New Sale
+                        </Modal.Title>
+                        <span className="material-icons closeCursorPointer" onClick={props.onHide}> close</span>
+
+                    </Modal.Header>
+                    <Modal.Body >
+                        
+
+
+                    <Form>
+                            <div>
+                                <div>
+
+                                    <div className='row'>
+                                       
+                                        <div className="col-6">
+                                            <Form.Group className="mb-4 ModalFormInputField " >
+                                                <Form.Label>First Name*</Form.Label>
+                                                <Form.Control type="text" placeholder="First Name" />
+                                                <Form.Control.Feedback type="invalid">
+                                                    error message
+                                                </Form.Control.Feedback>
+
+                                            </Form.Group>
+                                        </div>
+                                        <div className="col-6">
+                                            <Form.Group className="mb-4 ModalFormInputField">
+                                                <Form.Label>Last Name*</Form.Label>
+                                                <Form.Control type="text" placeholder="Last Name" />
+                                                <Form.Control.Feedback type="invalid">
+                                                    error message
+                                                </Form.Control.Feedback>
+
+                                            </Form.Group>
+                                        </div>
+                                        <div className="col-6 ">
+                                            <Form.Group className=" mb-4 ModalFormInputField" >
+                                                <Form.Label>Mobile Number*</Form.Label>
+                                                <Form.Control type="text" placeholder="Ex : 9988776655" />
+                                                <Form.Control.Feedback type="invalid">
+                                                    error message
+                                                </Form.Control.Feedback>
+
+                                            </Form.Group>
+                                        </div>
+                                        <div className="col-6">
+                                            <Form.Group className="mb-4 ModalFormInputField">
+                                                <Form.Label>Email Address</Form.Label>
+                                                <Form.Control type="text" placeholder="Ex : abc@gmail.com" />
+                                                <Form.Control.Feedback type="invalid">
+                                                    error message
+                                                </Form.Control.Feedback>
+
+                                            </Form.Group>
+                                        </div>
+                                     
+                                      
+                                        <div className="col-6">
+                                            <Form.Group className="mb-4 ModalFromRadioBtn" >
+                                                <Form.Label className='mb-3'>Gender*</Form.Label>
+                                                <div className='radiobtn '>
+                                                    <Form.Check
+
+                                                        label="Male"
+                                                        name="gender"
+                                                        type="radio"
+
+
+                                                    />
+                                                    <Form.Check
+
+                                                        label="Female"
+                                                        name="gender"
+                                                        type="radio"
+
+                                                    /></div>
+                                                <Form.Control.Feedback type="invalid">
+                                                    error message
+                                                </Form.Control.Feedback>
+
+
+                                            </Form.Group>
+                                        </div>
+                                       
+                                        <div className="col-6">
+                                            <Form.Group className="mb-4 ModalFormInputField customBigDropDown">
+                                                <Form.Label> Birth Date*</Form.Label>
+                                                <CustomCalendarDropDown title={"dd/mm/yyyy"}/> 
+                                                <Form.Control.Feedback type="invalid">
+                                                    error message
+                                                </Form.Control.Feedback>
+
+                                            </Form.Group>
+                                        </div>
+                                        <div className="col-12">
+                                            <Form.Group className="mb-4 ModalFormInputField customBigDropDown">
+                                                <Form.Label> Member/Employee Referral*</Form.Label>
+                                                <CustomDropdown options={member} title="Select Referral" />
+                                                <Form.Control.Feedback type="invalid">
+                                                    error message
+                                                </Form.Control.Feedback>
+
+                                            </Form.Group>
+                                        </div>
+                                        <div className='col-12'>
+                                            <Form.Group className="mb-4 ModalFormTextarea">
+                                                <Form.Label>Remark / Summery</Form.Label>
+                                                <textarea placeholder="Type your Remark / Summery here..."></textarea>
+                                                <Form.Control.Feedback type="invalid">
+                                                    error message
+                                                </Form.Control.Feedback>
+                                            </Form.Group>
+                                        </div>
+                                        <div className='col-12'>
+                                            <Form.Group className="mb-4 ModalFormTextarea">
+                                                <Form.Label>Residential Address</Form.Label>
+                                                <textarea placeholder="Type your Address here..."></textarea>
+                                                <Form.Control.Feedback type="invalid">
+                                                    error message
+                                                </Form.Control.Feedback>
+                                            </Form.Group>
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+
+
+                                <div>
+                                  
+                                </div>
+                            </div>
+
+                        </Form>
+
+                    </Modal.Body>
+                    <Modal.Footer className='me-1'>
+                        <Button onClick={props.onHide} className="FormOutlineBtn">Cancel</Button>
+                        <Button className="FormFillBtn ">Add New Sale
+                    
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
+            }
+
+
+
+
+
+
+
+
+
+         {/* =====================Add New Enquiry modal from ============= */}
+         {props.name == 'addNewEnquiry' &&
+                <Modal
+                    {...props}
+
+
+                    size="lg"
+                    aria-labelledby="contained-modal-title-vcenter"
+                    centered
+                    id='DashboardSmsModal'
+                >
+                    <Modal.Header className='ModalFormHeader' >
+                        <Modal.Title id="contained-modal-title-vcenter">
+                            <span className="material-icons"> record_voice_over</span>  Add New Enquiry
+                        </Modal.Title>
+                        <span className="material-icons closeCursorPointer" onClick={props.onHide}> close</span>
+
+                    </Modal.Header>
+                    <Modal.Body >
+                        
+
+
+                    <Form>
+                            <div>
+                                <div>
+
+                                    <div className='row'>
+                                       
+                                        <div className="col-6">
+                                            <Form.Group className="mb-4 ModalFormInputField " >
+                                                <Form.Label>First Name*</Form.Label>
+                                                <Form.Control type="text" placeholder="First Name" />
+                                                <Form.Control.Feedback type="invalid">
+                                                    error message
+                                                </Form.Control.Feedback>
+
+                                            </Form.Group>
+                                        </div>
+                                        <div className="col-6">
+                                            <Form.Group className="mb-4 ModalFormInputField">
+                                                <Form.Label>Last Name*</Form.Label>
+                                                <Form.Control type="text" placeholder="Last Name" />
+                                                <Form.Control.Feedback type="invalid">
+                                                    error message
+                                                </Form.Control.Feedback>
+
+                                            </Form.Group>
+                                        </div>
+                                        <div className="col-6 ">
+                                            <Form.Group className=" mb-4 ModalFormInputField" >
+                                                <Form.Label>Mobile Number*</Form.Label>
+                                                <Form.Control type="text" placeholder="Ex : 9988776655" />
+                                                <Form.Control.Feedback type="invalid">
+                                                    error message
+                                                </Form.Control.Feedback>
+
+                                            </Form.Group>
+                                        </div>
+                                        <div className="col-6">
+                                            <Form.Group className="mb-4 ModalFormInputField">
+                                                <Form.Label>Email Address</Form.Label>
+                                                <Form.Control type="text" placeholder="Ex : abc@gmail.com" />
+                                                <Form.Control.Feedback type="invalid">
+                                                    error message
+                                                </Form.Control.Feedback>
+
+                                            </Form.Group>
+                                        </div>
+                                        <div className="col-6">
+                                            <Form.Group className="mb-4 ModalFormInputField">
+                                                <Form.Label>Gym Services*</Form.Label>
+                                                <CustomDropdown options={member} title="Select" />
+                                                <Form.Control.Feedback type="invalid">
+                                                    error message
+                                                </Form.Control.Feedback>
+
+                                            </Form.Group>
+                                        </div>
+                                        <div className="col-6">
+                                            <Form.Group className="mb-4 ModalFormInputField">
+                                                <Form.Label>Budget per month</Form.Label>
+                                                <Form.Control type="text" placeholder="Ex : ₹4000" />
+                                                <Form.Control.Feedback type="invalid">
+                                                    error message
+                                                </Form.Control.Feedback>
+
+                                            </Form.Group>
+                                        </div>
+                                        <div className="col-6">
+                                            <Form.Group className="mb-4 ModalFormInputField">
+                                                <Form.Label>Lead Type*</Form.Label>
+                                                <CustomDropdown options={member} title="Select" />
+                                                <Form.Control.Feedback type="invalid">
+                                                    error message
+                                                </Form.Control.Feedback>
+
+                                            </Form.Group>
+                                        </div>
+                                        <div className="col-6">
+                                            <Form.Group className="mb-4 ModalFromRadioBtn" >
+                                                <Form.Label className='mb-3'>Gender*</Form.Label>
+                                                <div className='radiobtn '>
+                                                    <Form.Check
+
+                                                        label="Male"
+                                                        name="gender"
+                                                        type="radio"
+
+
+                                                    />
+                                                    <Form.Check
+
+                                                        label="Female"
+                                                        name="gender"
+                                                        type="radio"
+
+                                                    /></div>
+                                                <Form.Control.Feedback type="invalid">
+                                                    error message
+                                                </Form.Control.Feedback>
+
+
+                                            </Form.Group>
+                                        </div>
+                                       
+                                        <div className="col-12">
+                                            <Form.Group className="mb-4 ModalFormInputField customBigDropDown">
+                                                <Form.Label> Where did you hear about us?*</Form.Label>
+                                                <CustomDropdown options={member} title="Select One" />
+                                                <Form.Control.Feedback type="invalid">
+                                                    error message
+                                                </Form.Control.Feedback>
+
+                                            </Form.Group>
+                                        </div>
+                                        <div className='col-12'>
+                                            <Form.Group className="mb-4 ModalFormTextarea">
+                                                <Form.Label>Remark / Summery</Form.Label>
+                                                <textarea placeholder="Type your Comments here..."></textarea>
+                                                <Form.Control.Feedback type="invalid">
+                                                    error message
+                                                </Form.Control.Feedback>
+                                            </Form.Group>
+                                        </div>
+                                        <div className='col-12'>
+                                            <Form.Group className="mb-4 ModalFormTextarea">
+                                                <Form.Label>Residential Address</Form.Label>
+                                                <textarea placeholder="Type your Address here..."></textarea>
+                                                <Form.Control.Feedback type="invalid">
+                                                    error message
+                                                </Form.Control.Feedback>
+                                            </Form.Group>
+                                        </div>
+
+                                        <div className="col-12">
+                                            <Form.Group className="mb-4 ModalFromCheckBox" >
+
+                                                <div className='checkbox '>
+                                                    <Form.Check
+
+                                                        label="Book a Trial"
+                                                        name="book1"
+                                                        type="checkbox"
+
+
+                                                    />
+                                                </div>
+                                            </Form.Group>
+                                        </div>
+                                        <div className="col-12">
+                                            <Form.Group className="mb-4 ModalFormInputField customBigDropDown">
+                                                <Form.Label>Assign To*</Form.Label>
+                                                <CustomDropdown options={member} title="Select Trainer" />
+                                                <Form.Control.Feedback type="invalid">
+                                                    error message
+                                                </Form.Control.Feedback>
+
+                                            </Form.Group>
+                                        </div>
+                                        <div className="col-12">
+                                            <Form.Group className="mb-4 ModalFormInputField">
+                                                <Form.Label>Start Date</Form.Label>
+                                                <CustomCalendarDropDown title={"dd/mm/yyyy"}/> 
+                                                <Form.Control.Feedback type="invalid">
+                                                    error message
+                                                </Form.Control.Feedback>
+
+                                            </Form.Group>
+                                        </div>
+                                        <div className="col-12">
+                                            <Form.Group className="mb-4 ModalFormInputField">
+                                                <Form.Label>End Date</Form.Label>
+                                                <CustomCalendarDropDown title={"dd/mm/yyyy"}/> 
+                                                <Form.Control.Feedback type="invalid">
+                                                    error message
+                                                </Form.Control.Feedback>
+
+                                            </Form.Group>
+                                        </div>
+
+
+                                        <div className="col-12">
+                                            <Form.Group className="mb-4 ModalFromCheckBox" >
+
+                                                <div className='checkbox '>
+                                                    <Form.Check
+
+                                                        label="Add Follow Up"
+                                                        name="book1"
+                                                        type="checkbox"
+
+
+                                                    />
+                                                </div>
+                                            </Form.Group>
+                                        </div>
+                                        <div className="col-12">
+                                            <Form.Group className="mb-4 ModalFormInputField">
+                                                <Form.Label>Follow Up Date*</Form.Label>
+                                                <CustomCalendarDropDown title={"dd/mm/yyyy"}/> 
+                                                <Form.Control.Feedback type="invalid">
+                                                    error message
+                                                </Form.Control.Feedback>
+
+                                            </Form.Group>
+                                        </div>
+                                        <div className="col-12">
+                                            <Form.Group className="mb-4 ModalFormInputField customBigDropDown">
+                                                <Form.Label>Allocate*</Form.Label>
+                                                <CustomDropdown options={member} title="Select Allocate" />
+                                                <Form.Control.Feedback type="invalid">
+                                                    error message
+                                                </Form.Control.Feedback>
+
+                                            </Form.Group>
+                                        </div>
+                                        <div className="col-12">
+                                            <Form.Group className="mb-4 ModalFormInputField customBigDropDown">
+                                                <Form.Label>Type*</Form.Label>
+                                                <CustomDropdown options={member} title="Select" />
+                                                <Form.Control.Feedback type="invalid">
+                                                    error message
+                                                </Form.Control.Feedback>
+
+                                            </Form.Group>
+                                        </div>
+                                        <div className="col-12">
+                                            <Form.Group className="mb-4 ModalFormInputField customBigDropDown">
+                                                <Form.Label>Convertibility*</Form.Label>
+                                                <CustomDropdown options={member} title="Select " />
+                                                <Form.Control.Feedback type="invalid">
+                                                    error message
+                                                </Form.Control.Feedback>
+
+                                            </Form.Group>
+                                        </div>
+                                        <div className='col-12'>
+                                            <Form.Group className="mb-4 ModalFormTextarea">
+                                                <Form.Label>To Do*</Form.Label>
+                                                <textarea placeholder="Type here..."></textarea>
+                                                <Form.Control.Feedback type="invalid">
+                                                    error message
+                                                </Form.Control.Feedback>
+                                            </Form.Group>
+                                        </div>
+                                        
+
+                                    </div>
+
+                                </div>
+
+
+                                <div>
+                                  
+                                </div>
+                            </div>
+
+                        </Form>
+
+                    </Modal.Body>
+                    <Modal.Footer className='me-1'>
+                        <Button onClick={props.onHide} className="FormOutlineBtn">Cancel</Button>
+                        <Button className="FormFillBtn ">Add Enquiry
+                            <span className="material-icons "> send </span>
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
+            }
+
+
+
+
+
             {/* =====================sms modal from ============= */}
             {props.name == 'smsModal' &&
                 <Modal

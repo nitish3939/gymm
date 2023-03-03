@@ -39,17 +39,17 @@
             align-items: center;
             justify-content: space-between;
             background: $blue4;
-            border-radius: 8px;
+            border-radius: 8px 8px 0 0;
             padding: 12px 12px 12px 12px;
         }
 
         .membersContent {
-            padding: 12px 12px;
+            // padding: 12px 12px;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
 
             .membersContentList {
-                padding: 4px;
+                padding: 36px 0px 36px 12px;
                 &:nth-child(1) {
                     border-right: solid 1px $border1;
                 }
@@ -57,61 +57,80 @@
                     padding-left: 12px;
                 }
                 .num {
-                    font-weight: 700;
-                    font-size: 24px;
+                    font-size: 16px;
                     color: $whiteColor;
+                    font-weight: 700;
+                    line-height: 24px;
                 }
                 .text {
                     font-weight: 600;
-                    font-size: 14px;
-                    color: $blue5;
-                    margin-top: 8px;
+                    font-size: 12px;
+                    line-height: 16px;
+                    color: rgba(255, 255, 255, 0.8);
                 }
             }
         }
         &:nth-child(2) {
-            background: $green3;
-            .membersHeading {
-                background: $green4;
-            }
-        }
-        &:nth-child(3) {
-            background: $orange3;
-            .membersHeading {
-                background: $orange4;
-            }
-        }
-        &:nth-child(4) {
-            background: $green5;
-            .membersHeading {
-                background: $green6;
-            }
-        }
-        &:nth-child(5) {
-            background: $purple;
-            .membersHeading {
-                background: $purple1;
-            }
-        }
-        &:nth-child(6) {
-            background: $green3;
-            .membersHeading {
-                background: $green4;
-            }
-        }
-        &:nth-child(7) {
             background: $orange5;
             .membersHeading {
                 background: $orange2;
             }
         }
+        &:nth-child(3) {
+            background: $green3;
+            .membersHeading {
+                background: $green4;
+            }
+        }
+        &:nth-child(4) {
+            background: $orange3;
+            .membersHeading {
+                background: $orange4;
+            }
+        }
+        &:nth-child(5) {
+            background: $green3;
+            .membersHeading {
+                background: $green4;
+            }
+        }
+        &:nth-child(6) {
+            background: $purple;
+            .membersHeading {
+                background: $purple1;
+            }
+        }
+        &:nth-child(7) {
+            background: $green5;
+            .membersHeading {
+                background: $green6;
+            }
+        }
         &:nth-child(8) {
+            background: $purple;
+            .membersHeading {
+                background: $purple1;
+            }
+        }
+        &:nth-child(9) {
+            background: $green3;
+            .membersHeading {
+                background: $green4;
+            }
+        }
+        &:nth-child(10) {
+            background: $orange5;
+            .membersHeading {
+                background: $orange2;
+            }
+        }
+        &:nth-child(11) {
             background: $blue6;
             .membersHeading {
                 background: $blue7;
             }
         }
-        &:nth-child(9) {
+        &:nth-child(12) {
             background: $orange5;
             .membersHeading {
                 background: $orange2;

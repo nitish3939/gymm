@@ -136,7 +136,7 @@ const Members = () => {
 
                 <div className='col-lg-3'>
                     <div className='downloadReoprtBtn ml-auto'>
-                        <span className="material-icons downloadIcon "> file_download </span>
+                        <span className="material-icons-outlined downloadIcon "> file_download </span>
                         Download XLS Report
                     </div>
                 </div>

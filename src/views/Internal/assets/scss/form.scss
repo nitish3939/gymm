@@ -643,6 +643,9 @@ border-radius: 8px;
   background-color:#F9804C !important;
   
 }
+.react-datepicker-popper {
+  z-index: 2 !important;
+}
 .datePickerModal #DashboardSmsModal {
    
     top: -100px;

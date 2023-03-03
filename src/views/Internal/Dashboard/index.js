@@ -23,6 +23,8 @@ const Dashboard = () => {
     const [ResponseModal, setResponseModal] = useState(false);
 
     const [smsModal, setSmsModal] = useState(false);
+    const [addNewSale, setAddNewSale] = useState(false);
+    const [newEnquiry, setNewEnquiry] = useState(false)
     const [editEnquiry, setEditEnquiryModal] = useState(false);
     const [deleteModal, setdeleteModal] = useState(false);
 
@@ -43,11 +45,28 @@ const Dashboard = () => {
                 <div className={classNames("headerSearchWrapper", styles.dashboardSearch)}>
                     <input type="text" placeholder="Search & Create “New Sales”" className="formControl" />
                     <div className='searchBtnInner'>  
-                        <button className='FormFillBtn BtnInner1'> New Sale</button>
-                        <button className='FormFillBtn BtnInner2'> New Enquiry</button>
+                        <button onClick={() => setAddNewSale(true)} className='FormFillBtn BtnInner1'> New Sale</button>
+                        <button onClick={() => setNewEnquiry(true)} className='FormFillBtn BtnInner2'> New Enquiry</button>
                     </div>
                     <span className="material-icons searchIcon"> search </span>
                     {/* <span className="material-icons closeIcon"> close </span> */}
+
+                    <ModalForm  id='addNewEnquiryModal'
+                                name={'addNewSaleModal'}
+                                scrollable={true}
+                                show={addNewSale}
+                                onHide={() => setAddNewSale(false)}
+                    />
+                       
+                    <ModalForm  id='addNewEnquiryModal'
+                                name={'addNewEnquiry'}
+                                scrollable={true}
+                                show={newEnquiry}
+                                onHide={() => setNewEnquiry(false)}
+                    />
+
+
+
                 </div>
 
                 <div className={classNames("flex alignItems", styles.filterWrapper)}>
@@ -338,12 +357,30 @@ const Dashboard = () => {
                         </div>
                         <div className={styles.membersContent}>
                             <div className={styles.membersContentList}>
-                                <div className={styles.num}>20</div>
+                                <div className={styles.num}>0</div>
                                 <div className={styles.text}>Active</div>
                             </div>
                             <div className={styles.membersContentList}>
-                                <div className={styles.num}>0</div>
+                                <div className={styles.num}>6790</div>
                                 <div className={styles.text}>Upcoming</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.membersCardList}>
+                        <div className={styles.membersHeading}>
+                            <h2 className='h2'>Attendence</h2>
+                            <span className="material-icons-outlined">
+                                info
+                            </span>
+                        </div>
+                        <div className={styles.membersContent}>
+                            <div className={styles.membersContentList}>
+                                <div className={styles.num}>0</div>
+                                <div className={styles.text}>Present</div>
+                            </div>
+                            <div className={styles.membersContentList}>
+                                <div className={styles.num}>6790</div>
+                                <div className={styles.text}>Absent</div>
                             </div>
                         </div>
                     </div>
@@ -356,12 +393,12 @@ const Dashboard = () => {
                         </div>
                         <div className={styles.membersContent}>
                             <div className={styles.membersContentList}>
-                                <div className={styles.num}>20</div>
-                                <div className={styles.text}>New Enquiry</div>
+                                <div className={styles.num}>0</div>
+                                <div className={styles.text}>New Enquiries</div>
                             </div>
                             <div className={styles.membersContentList}>
-                                <div className={styles.num}>0</div>
-                                <div className={styles.text}>Sale Enquiry</div>
+                                <div className={styles.num}>6790</div>
+                                <div className={styles.text}>Sales</div>
                             </div>
                         </div>
                     </div>
@@ -374,46 +411,28 @@ const Dashboard = () => {
                         </div>
                         <div className={styles.membersContent}>
                             <div className={styles.membersContentList}>
-                                <div className={styles.num}>20</div>
-                                <div className={styles.text}>Total</div>
+                                <div className={styles.num}>0</div>
+                                <div className={styles.text}>Totla</div>
                             </div>
                             <div className={styles.membersContentList}>
-                                <div className={styles.num}>0</div>
+                                <div className={styles.num}>6790</div>
                                 <div className={styles.text}>Done</div>
                             </div>
                         </div>
                     </div>
-                    <div className={styles.membersCardList}>
-                        <div className={styles.membersHeading}>
-                            <h2 className='h2'>Total Sales</h2>
-                            <span className="material-icons-outlined">
-                                info
-                            </span>
-                        </div>
-                        <div className={styles.membersContent}>
-                            <div className={styles.membersContentList}>
-                                <div className={styles.num}>20</div>
-                                <div className={styles.text}>Number</div>
-                            </div>
-                            <div className={styles.membersContentList}>
-                                <div className={styles.num}>0</div>
-                                <div className={styles.text}>Amount</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={classNames(styles.membersCardList, styles.membersCardList1)}>
+                    <div className={classNames(styles.membersCardList )}>
                         <div className={classNames(styles.membersHeading)}>
-                            <h2 className='h2'>Fresh Sales</h2>
-                            <h2 className='h2'>Renewal Sales</h2>
+                            <h2 className='h2'>Trial</h2>
+                            
                         </div>
                         <div className={styles.membersContent}>
                             <div className={styles.membersContentList}>
-                                <div className={styles.num}>20</div>
-                                <div className={styles.text}>Number</div>
+                                <div className={styles.num}>0</div>
+                                <div className={styles.text}>Attended</div>
                             </div>
                             <div className={styles.membersContentList}>
-                                <div className={styles.num}>0</div>
-                                <div className={styles.text}>Number</div>
+                                <div className={styles.num}>6790</div>
+                                <div className={styles.text}>Non-Attended</div>
                             </div>
                         </div>
                     </div>
@@ -459,24 +478,89 @@ const Dashboard = () => {
                             <h2 className='h2'>PT Renewal Sales</h2>
                         </div>
                         <div className={styles.membersContent}>
-                            <div className={styles.membersContent1}>
-                                <div className={styles.membersContentList}>
+                            <div className={classNames('d-flex flex-column' , styles.membersContent1)}>
+                                <div className={classNames('py-2', styles.membersContentList)}>
                                     <div className={styles.num}>0</div>
                                     <div className={styles.text}>Number</div>
                                 </div>
-                                <div className={styles.membersContentList}>
-                                    <div className={styles.num}>67M</div>
+                                <div className={classNames('py-2', styles.membersContentList)}>
+                                    <div className={styles.num}>₹677798787979</div>
                                     <div className={styles.text}>Amount</div>
                                 </div>
 
                             </div>
-                            <div className={styles.membersContent1}>
-                                <div className={styles.membersContentList}>
+                            <div className={classNames('d-flex flex-column' , styles.membersContent1)}>
+                            <div className={classNames('py-2', styles.membersContentList)}>
                                     <div className={styles.num}>0</div>
                                     <div className={styles.text}>Number</div>
                                 </div>
-                                <div className={styles.membersContentList}>
+                                <div className={classNames('py-2', styles.membersContentList)}>
+                                    <div className={styles.num}>₹677798787979</div>
+                                    <div className={styles.text}>Amount</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.membersCardList}>
+                        <div className={styles.membersHeading}>
+                            <h2 className='h2'>Sales</h2>
+                            <span className="material-icons-outlined">
+                                info
+                            </span>
+                        </div>
+                        <div className={styles.membersContent}>
+                            <div className={styles.membersContentList}>
+                                <div className={styles.num}>20</div>
+                                <div className={styles.text}>Upgrade</div>
+                            </div>
+                            <div className={styles.membersContentList}>
+                                <div className={styles.num}>0</div>
+                                <div className={styles.text}>Transfer</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.membersCardList}>
+                        <div className={styles.membersHeading}>
+                            <h2 className='h2'>Sales</h2>
+                            <span className="material-icons-outlined">
+                                info
+                            </span>
+                        </div>
+                        <div className={styles.membersContent}>
+                            <div className={styles.membersContentList}>
+                                <div className={styles.num}>20</div>
+                                <div className={styles.text}>Upgrade</div>
+                            </div>
+                            <div className={styles.membersContentList}>
+                                <div className={styles.num}>0</div>
+                                <div className={styles.text}>Transfer</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={classNames(styles.membersCardList, styles.membersCardList1)}>
+                        <div className={styles.membersHeading}>
+                            <h2 className='h2'>Fresh PT Sales</h2>
+                            <h2 className='h2'>PT Renewal Sales</h2>
+                        </div>
+                        <div className={styles.membersContent}>
+                            <div className={classNames('d-flex flex-column' , styles.membersContent1)}>
+                                <div className={classNames('py-2', styles.membersContentList)}>
                                     <div className={styles.num}>0</div>
+                                    <div className={styles.text}>Number</div>
+                                </div>
+                                <div className={classNames('py-2', styles.membersContentList)}>
+                                    <div className={styles.num}>₹677798787979</div>
+                                    <div className={styles.text}>Amount</div>
+                                </div>
+
+                            </div>
+                            <div className={classNames('d-flex flex-column' , styles.membersContent1)}>
+                            <div className={classNames('py-2', styles.membersContentList)}>
+                                    <div className={styles.num}>0</div>
+                                    <div className={styles.text}>Number</div>
+                                </div>
+                                <div className={classNames('py-2', styles.membersContentList)}>
+                                    <div className={styles.num}>₹677798787979</div>
                                     <div className={styles.text}>Amount</div>
                                 </div>
                             </div>

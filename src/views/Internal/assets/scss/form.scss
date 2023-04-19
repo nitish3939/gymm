@@ -151,9 +151,9 @@ select.formControl1 {
         display: block;
     }
 }
-.dietFoodtypeDropDown{
-    width: 131px;
-}
+// .dietFoodtypeDropDown{
+//     width: 131px;
+// }
 .customDropdownWrapper {
     border: 1px solid $inputBorder1;
     border-radius: 8px;
@@ -205,6 +205,7 @@ select.formControl1 {
     min-width: 83px;
     // max-width: 300px;
     // width: 100%;
+    // z-index: ;
 
     &:hover{
         background-color: $inputBg1;
@@ -245,7 +246,7 @@ color: $selectDropdownBtnFocusBgcolor;
         position: absolute;
         @extend .transition;
         transform: translateY(10px);
-        z-index: 2;
+        z-index: 9;
 
         
 
@@ -529,6 +530,8 @@ position: relative;
     border: 1px solid #7A7A7A !important;
     box-shadow: 0px 4px 12px #1A1A1A;
     border-radius: 8px !important;
+//     border-top-left-radius: 0px !important;
+// border-bottom-left-radius: 0px !important;
   }
   .react-datepicker__month-container {
     width: 100%;
@@ -600,7 +603,7 @@ padding-bottom: 10px;
     background-color: #f9804c !important;
   }
   .react-datepicker__day--selected, .react-datepicker__day--in-selecting-range, .react-datepicker__day--in-range, .react-datepicker__month-text--selected, .react-datepicker__month-text--in-selecting-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--selected, .react-datepicker__quarter-text--in-selecting-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--selected, .react-datepicker__year-text--in-selecting-range, .react-datepicker__year-text--in-range {
-    background-color: #f9804c !important;
+    background-color: #f9804c ;
     color: #fff;
   }
   .react-datepicker__day--keyboard-selected, .react-datepicker__month-text--keyboard-selected, .react-datepicker__quarter-text--keyboard-selected, .react-datepicker__year-text--keyboard-selected {
@@ -622,6 +625,7 @@ width: 68px;
 height: 40px;
 background: #545454;
 border-radius: 8px;
+padding: 8px;
   }
   .applyDateBtn{
     font-family: 'Inter';
@@ -671,11 +675,18 @@ border-radius: 8px;
 .CustomCalendarDatePicker {
     height: 40px;
 } 
+.CalendarWidthFixed{
+  width: 190px;
+}
 .CustomCalendarDatePicker .calendarIcon {
-    position: relative;
-    left: -32px;
-    top: -32px;
+    // position: relative;
+    // left: -32px;
+    // top: -32px;
     color: #B6B6B6;
+    width: 32px;
+margin-top: 0px;
+margin-left: 0px;
+display: block;
   }
   .CustomCalendarDatePicker select{
     appearance: none;
@@ -718,5 +729,322 @@ display: flex;
 gap: 8px;
  .BtnInner1, .BtnInner2 { 
   padding: 10px 24px;
+}
+}
+
+.react-datepicker__input-time-container {
+  color: #fff;
+}
+.react-datepicker-time__input input {
+  border: 1px solid #7a7a7a;
+  padding: 8px;
+  color: #fff;
+  border-radius: 8px;
+  background: #403f3f;
+cursor: text;
+}
+// =================Custom Date Range Picker================
+
+.customTimeRange {
+  display: inline-flex;
+  top: -72px;
+  position: relative;
+  margin-top: 21px;
+  gap: 12px;
+}
+.customTimeRange .selectOne{
+  
+width: 88px;
+height: 32px;
+border: 1px solid #7A7A7A;
+border-radius: 8px;
+padding: 4px 4px 4px 8px;
+background: #403F3F;
+  background-position-x: 0%;
+  background-position-y: 0%;
+  background-repeat: repeat;
+  background-image: none;
+  background-size: auto;
+color: #B6B6B6;
+}
+.customTimeRange .selectTwo{
+  width: 64px !important;
+height: 32px;
+border: 1px solid #7A7A7A;
+border-radius: 8px;
+padding: 4px 4px 4px 8px;
+background: #403F3F;
+  background-position-x: 0%;
+  background-position-y: 0%;
+  background-repeat: repeat;
+  background-image: none;
+  background-size: auto;
+color: #B6B6B6;
+}
+
+
+
+.CustomCalendarWithRange .twoBTNSection{
+  margin-top: -55px;
+}
+.CustomCalendarDatePicker .react-datepicker__month-container .react-datepicker__header:nth-child(2) {
+  margin-top: 58px;
+}
+
+
+.CustomCalendarDatePicker{
+.react-datepicker__day--range-start{
+  width: 32px !important;
+height: 32px;
+background: #F9804C;
+border-radius: 8px 0px 0px 8px ;
+justify-content: center !important;
+align-items: center !important;
+display: inline-flex !important;
+}
+.react-datepicker__day--selected{
+  width: 32px !important;
+height: 32px;
+background: #F9804C;
+ 
+border-radius: 8px 8px 8px 8px ;
+justify-content: center !important;
+align-items: center !important;
+display: inline-flex !important;
+}
+.react-datepicker__day {
+  width: 32px !important;
+  height: 32px;
+  border-radius: 8px 8px 8px 8px ;
+  justify-content: center !important;
+  align-items: center !important;
+  display: inline-flex ;
+  margin: 1px;
+&:hover{
+  border-radius: 8px 8px 8px 8px  !important;
+}
+}
+.react-datepicker__day--range-end{
+  border-radius: 0px 8px 8px 0px ;
+}
+.react-datepicker__day--range-start{
+  border-radius: 8px 0px 0px 8px;
+}
+
+
+.react-datepicker__day--in-selecting-range {
+  background-color: #545454;
+}
+.react-datepicker__day--today{
+  // background: #F9804C ;
+}
+// .react-datepicker__day--in-range{
+//   background-color: #545454;
+// }
+}
+.react-datepicker__day--selected, .react-datepicker__day--in-selecting-range, .react-datepicker__day--in-range, .react-datepicker__month-text--selected, .react-datepicker__month-text--in-selecting-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--selected, .react-datepicker__quarter-text--in-selecting-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--selected, .react-datepicker__year-text--in-selecting-range, .react-datepicker__year-text--in-range {
+  background-color: #545454;
+}
+.react-datepicker__day--in-selecting-range:not(.react-datepicker__day--in-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--in-range), .react-datepicker__month-text--in-selecting-range:not(.react-datepicker__day--in-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--in-range), .react-datepicker__quarter-text--in-selecting-range:not(.react-datepicker__day--in-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--in-range), .react-datepicker__year-text--in-selecting-range:not(.react-datepicker__day--in-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--in-range) {
+  background-color: #F9804C !important;
+}
+.react-datepicker__day--outside-month{
+  visibility: hidden;
+}
+
+.customRangeLable{
+  position: absolute;
+background: #403F3F;
+left: -152px;
+color: #fff;
+top: -1px;
+height: 420px;
+border-radius: 8px 0px 0px 8px;
+border-left: 1px solid #7a7a7a;
+border-bottom: 1px solid #7a7a7a;
+border-top: 1px solid #7a7a7a;
+
+
+.innerLabelRange{
+  padding-bottom: 26px;
+border-top: 0px;
+border-right: 1px solid #7a7a7a;
+border-bottom: 1px solid #7a7a7a;
+padding-top: 20px;
+}
+.lableRange {
+  cursor: pointer;
+  padding: 12px 65px 12px 12px;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.CustomCalendarWithRange{
+  .CustomCalendarDatePicker {
+    height: 40px;
+    width: 250px;
+  }
+  .CustomCalendarDatePicker .calendarIcon {
+    position: relative;
+    left: 10px;
+    top: -32px;
+    color: #B6B6B6;
+  }
+  .react-datepicker {
+    width: 100%;
+  }
+  .react-datepicker__month-container {
+    width: 270px;
+    height: 340px;
+  }
+}
+
+
+.customDateRangePicker{
+  border: 1px solid #7A7A7A;
+  box-shadow: 0px 4px 12px #1A1A1A;
+  border-radius: 8px;
+
+
+  .rdrDefinedRangesWrapper {
+    border-radius: 8px 0px 0px 8px;
+  }
+
+.rdrDefinedRangesWrapper {
+  background: #403F3F;
+  width: 151px;
+  border-width: 0px 0px 0px 0px;
+  border-style: solid;
+  border-color: #7A7A7A;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #B6B6B6;
+}
+.rdrStaticRange {
+  cursor: pointer;
+  display: block;
+  outline: 0;
+  border-bottom: none;
+  padding: 0;
+  background: #403f3f;
+  color: #B6B6B6;
+}
+.rdrStaticRangeLabel {
+  display: block;
+outline: 0;
+padding: 12px 0px 12px 12px;
+text-align: left;
+font-weight: 500;
+font-size: 14px;
+line-height: 20px;
+}
+.rdrStaticRangeSelected .rdrStaticRangeLabel{
+  color: #F9804C;
+  font-weight: 500;
+font-size: 14px;
+line-height: 20px;
+}
+.rdrStaticRange:hover .rdrStaticRangeLabel, .rdrStaticRange:focus .rdrStaticRangeLabel {
+  background: none;
+}
+.rdrStaticRanges {
+  padding: 20px 0px 20px 0px;
+}
+.rdrDateDisplayWrapper {
+  // display: none;
+}
+.rdrMonth {
+  width: 270px;
+  border-left: 1px solid #7A7A7A;
+}
+.rdrMonthAndYearWrapper {
+
+  // display: none;
+}
+.rdrMonths {
+  display: flex;
+  background: #403F3F;
+  border-radius: 0px 8px 8px 0px;
+}
+
+.rdrDayNumber span {
+  color: #F5F5F5;
+}
+.rdrDayPassive .rdrDayNumber span {
+  color: #7A7A7A;
+}
+.rdrDay.rdrDayToday {
+  // background: #F9804C;
+  // border-radius: 8px 8px 8px 8px;
+  // width: 32px;
+  // height: 32px;
+}
+.rdrDayToday .rdrDayNumber span::after {
+  // display: none !important;
+}
+.rdrStartEdge {
+  left: 0px !important;
+background: #F9804C !important;
+border-radius: 8px 0px 0px 8px;
+padding: 18px 0px 18px 0px !important;
+top: 0px !important;
+}
+.rdrSelected, .rdrInRange, .rdrStartEdge, .rdrEndEdge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 5px;
+  background: #545454;
+  padding: 18px 0px 18px 0px;
+top: 0px;
+}
+.rdrEndEdge.rdrStartEdge {
+  right: 0px;
+background: #F9804C;
+border-radius: 8px;
+padding: 18px 0px 18px 0px;
+top: 0px;
+}
+.rdrEndEdge {
+  right: 0px;
+background: #F9804C;
+border-radius: 0px 8px 8px 0px;
+padding: 18px 0px 18px 0px;
+top: 0px;
+}
+.rdrDay.rdrDayHovered {
+  background: #F9804C;
+  border-radius: 8px 8px 8px 8px;
+  padding: 16px 0px 16px 0px;
+}
+.rdrCalendarWrapper {
+ 
+  background: #403f3f;
+}
+.rdrInputRanges {
+  // display: none !important;
+}
+.rdrDayEndOfMonth .rdrInRange, .rdrDayEndOfMonth .rdrStartEdge, .rdrDayEndOfWeek .rdrInRange, .rdrDayEndOfWeek .rdrStartEdge {
+  border-top-right-radius: 8px;
+  right: 0px;
+  border-bottom-right-radius: 8px;
+}
+.rdrDayStartOfMonth .rdrInRange, .rdrDayStartOfMonth .rdrEndEdge, .rdrDayStartOfWeek .rdrInRange, .rdrDayStartOfWeek .rdrEndEdge {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  left: 0px;
 }
 }

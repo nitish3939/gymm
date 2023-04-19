@@ -10,9 +10,8 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 
 
 import Form from 'react-bootstrap/Form';
-import CustomCalendarDropDown from '../components/CustomDropdown/CustomCalendarDropDown';
-
-const MemberEditProfile = () => {
+import { Link } from "react-router-dom";
+const ViewProfile = () => {
     const [smsModal, setSmsModal] = useState(false);
     const [notificationModal, setnotificationModal] = useState(false);
     const [editEnquiry, setEditEnquiryModal] = useState(false);
@@ -23,32 +22,27 @@ const MemberEditProfile = () => {
     const Attendence = ["All time", "Today", "Yesterday", "This month", "Last month", "This year", "Custom"];
     const rowPerPage =["5", "10","20","50"] 
 
-    const [editDesktopPictureModal, setEditDesktopPictureModal] = useState(false);
 
-    const[saveChangesModal, setSaveChangesModal] =useState(false);
 
 
     return (
         <>
-        <div className='editMemberProfilePage'> 
+        <div className='editMemberProfilePage viewOnlyProfile'> 
             <h1 className="h1 flex spaceBetween alignItems mt-1">
                Edit Profile
-                <div onClick={() => setSaveChangesModal(true)}  className='addEnquiryBtn'>
-                    
-                    Save Changes
+
+               <Link to="/memberEditProfile">
+               <div className='editMemberProfileBtn ml-auto'>
+                        <span className="material-icons downloadIcon "> edit </span>
+                        Edit Profile
                 </div>
-                
-                <ModalForm
-                    name={'saveChangesModal'}
-                    show={saveChangesModal}
-                    onHide={() => setSaveChangesModal(false)}
-                />
+                </Link>
             </h1>
         <div className='row'>
                <div className='col-3 mb-3'>
                     <div  className='memberAvatar d-inline-flex mt-2'>
                         <img src={userImg} alt="user" />
-                        <span onClick={() => setEditDesktopPictureModal(true)}  class="material-icons editMemberPicIcon">edit</span>
+                       
                         <div className='memberAvatarTitle'>
                         <div className='mainTitle mb-1'>Sonu Sharma </div>
                         <div className='subTitle'>Client ID : 230492</div>
@@ -56,11 +50,6 @@ const MemberEditProfile = () => {
                     </div>
                     
                </div>
-               <ModalForm
-                    name={'editDesktopPictureModal'}
-                    show={editDesktopPictureModal}
-                    onHide={() => setEditDesktopPictureModal(false)}
-                />
         </div>
             
             <section >
@@ -184,7 +173,7 @@ const MemberEditProfile = () => {
                                         <div className="col-6">
                                             <Form.Group className="mb-4 ModalFormInputField" >
                                                 <Form.Label>Birth Date</Form.Label>
-                                                <CustomCalendarDropDown />
+                                                <Form.Control type="date" />
                                                 <Form.Control.Feedback type="invalid">
                                                     error message
                                                 </Form.Control.Feedback>
@@ -194,7 +183,7 @@ const MemberEditProfile = () => {
                                         <div className="col-6">
                                             <Form.Group className="mb-4 ModalFormInputField">
                                                 <Form.Label>Aniversary Date</Form.Label>
-                                                <CustomCalendarDropDown />
+                                                <Form.Control type="date" />
                                                 <Form.Control.Feedback type="invalid">
                                                     error message
                                                 </Form.Control.Feedback>
@@ -231,4 +220,4 @@ const MemberEditProfile = () => {
     )
 }
 
-export default MemberEditProfile
+export default ViewProfile

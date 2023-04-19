@@ -21,6 +21,7 @@ const SMSReport = () => {
 
     const handle = ["Handle1", "Handle2", "Handle3", "This month", "Last month", "This year", "Custom"];
     const lead = ["All time", "Today", "Yesterday", "This month", "Last month", "This year", "Custom"];
+    const page =["All", "10", "20", "50"]
     const [GenerateReport, setGenerateReport] = useState(false);
     return (
         <>
@@ -66,22 +67,13 @@ const SMSReport = () => {
                              <CustomCalendarDropDown />
                            </div>
 
-
-
-
-
-
-
-
-
-
                         <div className={classNames("headerSearchWrapper member-search ", styles.dashboardSearch)}>
                             <input type="text" placeholder="Search Category" className="formControl" />
                             <span className="material-icons searchIcon"> search </span>
                             {/* <span className="material-icons closeIcon"> close </span> */}
                         </div>
                         <div className='downloadReoprtBtn ml-auto' onClick={() => setGenerateReport(true)}>
-                        <span className="material-icons downloadIcon "> file_download </span>
+                        <span className="material-icons-outlined downloadIcon "> file_download </span>
                         Generate XLS Report
 
 
@@ -112,15 +104,12 @@ const SMSReport = () => {
                             <thead>
                                 <tr>
 
-                                    <th> Client Id</th>
+                                    <th> Sr. No</th>
                                     <th>Mobile Number</th>
                                     <th className='TableMessage'>Message</th>
                                     <th> Status</th>
-                                    <th> Sent Date</th>
-
-
-
-
+                                    <th> Send Date</th>
+                                    <th> Delivered</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -137,18 +126,7 @@ const SMSReport = () => {
                                     </td>
                                     <td> <span className='chipOutlineFilled done'>Active</span></td>
                                     <td> 02/10/2022</td>
-
-
-
-
-
-
-
-
-
-
-
-
+                                    <td> 02/10/2022</td>
 
                                 </tr>
                                 <tr>
@@ -164,18 +142,7 @@ const SMSReport = () => {
                                     </td>
                                     <td> <span className='chipOutlineFilled done'>Active</span></td>
                                     <td> 02/10/2022</td>
-
-
-
-
-
-
-
-
-
-
-
-
+                                    <td> 02/10/2022</td>
 
                                 </tr>
                                 <tr>
@@ -191,18 +158,7 @@ const SMSReport = () => {
                                     </td>
                                     <td> <span className='chipOutlineFilled done'>Active</span></td>
                                     <td> 02/10/2022</td>
-
-
-
-
-
-
-
-
-
-
-
-
+                                    <td> 02/10/2022</td>
 
                                 </tr>
                                 <tr>
@@ -218,18 +174,7 @@ const SMSReport = () => {
                                     </td>
                                     <td> <span className='chipOutlineFilled done'>Active</span></td>
                                     <td> 02/10/2022</td>
-
-
-
-
-
-
-
-
-
-
-
-
+                                    <td> 02/10/2022</td>
 
                                 </tr>
                                 <tr>
@@ -245,19 +190,7 @@ const SMSReport = () => {
                                     </td>
                                     <td> <span className='chipOutlineFilled done'>Active</span></td>
                                     <td> 02/10/2022</td>
-
-
-
-
-
-
-
-
-
-
-
-
-
+                                    <td> 02/10/2022</td>
                                 </tr>
 
 
@@ -285,21 +218,14 @@ const SMSReport = () => {
 
                         <div className={classNames("flex alignItems spaceBetween", styles.filterWrapper)}>
                             <div className={styles.sortBy}>Rows per page</div>
-                            <div className="selectDropdownBtn smallDropdown">
-                                <div className="selectedText">
-                                    6
-                                </div>
-                                <span className="material-icons"> expand_more </span>
-                                <div className="selectDropdown">
-                                    <div className="options static">All time</div>
-                                    <div className="options">Today</div>
-                                    <div className="options">Yesterday</div>
-                                    <div className="options">This month</div>
-                                    <div className="options">Last month</div>
-                                    <div className="options">This year</div>
-                                    <div className="options custom">Custom</div>
-                                </div>
+                            <div className={classNames("flex alignItems spaceBetween rowPerPageDropDown", styles.filterWrapper)}>
+                            <div className={styles.sortBy}>Rows per page</div>
+                            
+                            <div className="selectedText" >
+                                <CustomDropdown options={page} title="All" />
                             </div>
+                            {/* </div> */}
+                        </div>
                         </div>
 
                     </div>
@@ -492,21 +418,14 @@ const SMSReport = () => {
 
                         <div className={classNames("flex alignItems spaceBetween", styles.filterWrapper)}>
                             <div className={styles.sortBy}>Rows per page</div>
-                            <div className="selectDropdownBtn smallDropdown">
-                                <div className="selectedText">
-                                    6
-                                </div>
-                                <span className="material-icons"> expand_more </span>
-                                <div className="selectDropdown">
-                                    <div className="options static">All time</div>
-                                    <div className="options">Today</div>
-                                    <div className="options">Yesterday</div>
-                                    <div className="options">This month</div>
-                                    <div className="options">Last month</div>
-                                    <div className="options">This year</div>
-                                    <div className="options custom">Custom</div>
-                                </div>
+                            <div className={classNames("flex alignItems spaceBetween rowPerPageDropDown", styles.filterWrapper)}>
+                            <div className={styles.sortBy}>Rows per page</div>
+                            
+                            <div className="selectedText" >
+                                <CustomDropdown options={page} title="All" />
                             </div>
+                            {/* </div> */}
+                        </div>
                         </div>
 
                     </div>

@@ -37,7 +37,8 @@ const Payments = () => {
 
     const handle = ["Handle1", "Handle2", "Handle3", "This month", "Last month", "This year", "Custom"];
     const lead = ["All time", "Today", "Yesterday", "This month", "Last month", "This year", "Custom"];
-    const rowsPerPage=["5","10","20","50"]
+   
+    const page =["5","10","20","50"]
 
     const [PaidPayment, setPaidPayment] = useState(false);
 
@@ -133,10 +134,10 @@ const Payments = () => {
                     <div className='categoryWrapper'>
 
                         <div className='col-2'>
-                     <CustomCalendarDropDown title={"Select Invoice Date"}/>
+                     <CustomCalendarDropDown  title={"Select Invoice Date"}/>
                         </div>
                         <div className='col-2'>
-                        <CustomCalendarDropDown title={"Select Due Date"}/>        
+                        <CustomCalendarDropDown  title={"Select Due Date"}/>        
                       </div>
 
 
@@ -284,10 +285,14 @@ const Payments = () => {
                                 </ul>
                             </div>
 
-                            <div className={classNames("flex alignItems spaceBetween", styles.filterWrapper)}>
-                                <div className={styles.sortBy}>Rows per page</div>
-                                <CustomDropdown options={rowsPerPage} title="Rows Per Page" />
+                            <div className={classNames("flex alignItems spaceBetween rowPerPageDropDown", styles.filterWrapper)}>
+                            <div className={styles.sortBy}>Rows per page</div>
+                            
+                            <div className="selectedText" >
+                                <CustomDropdown options={page} title="All" />
                             </div>
+                            {/* </div> */}
+                        </div>
 
                         </div>
                     </div>
@@ -417,10 +422,14 @@ const Payments = () => {
                                 </ul>
                             </div>
 
-                            <div className={classNames("flex alignItems spaceBetween", styles.filterWrapper)}>
-                                <div className={styles.sortBy}>Rows per page</div>
-                                <CustomDropdown options={rowsPerPage} title="Rows Per Page" />
+                            <div className={classNames("flex alignItems spaceBetween rowPerPageDropDown", styles.filterWrapper)}>
+                            <div className={styles.sortBy}>Rows per page</div>
+                            
+                            <div className="selectedText" >
+                                <CustomDropdown options={page} title="All" />
                             </div>
+                            {/* </div> */}
+                        </div>
 
                         </div>
                     </div>

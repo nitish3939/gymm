@@ -7,13 +7,20 @@ const CustomDropdown = ({ options, title }) => {
 
     const [Active, setActive] = useState(false);
     const [Selected, setSelected] = useState(false);
-    const myRef = useRef();
-
+    const myRef = useRef(null);
+    const listRef = useRef(null);
     const toggleDropdown = () => {
         setActive(!Active);
 }
 
- const handleClickOutside = e => {
+ 
+
+
+
+
+
+
+const handleClickOutside = e => {
         if (!myRef.current.contains(e.target)) {
             setActive(false);
         }
@@ -28,9 +35,34 @@ const CustomDropdown = ({ options, title }) => {
     });
 
 
+useEffect(() => {
+    if (Active) {
+      const parentRect = myRef.current.getBoundingClientRect();
+      const listRect = listRef.current.getBoundingClientRect();
+      const spaceBelow = window.innerHeight - parentRect.bottom;
+      const spaceRight = window.innerWidth - parentRect.right;
+
+      if (spaceBelow < listRect.height && spaceBelow < parentRect.top) {
+        listRef.current.style.top = `-${listRect.height}px`;
+      } else {
+        listRef.current.style.top = `${parentRect.height}px`;
+      }
+
+      if (spaceRight < listRect.width && spaceRight < parentRect.left) {
+        listRef.current.style.left = "auto";
+        listRef.current.style.right = "0";
+      } else {
+        listRef.current.style.right = "auto";
+        listRef.current.style.left = "0";
+      }
+    }
+  }, [Active]);
+
+      
+    
     return (
         <>
-            <div  ref={myRef} className={`selectDropdownBtn ${Active ? "active" : ""}`} onClick={toggleDropdown}>
+            <div  ref={myRef} className={`selectDropdownBtn dropDownFullWidth ${Active ? "active" : ""}`} onClick={toggleDropdown}>
                 <div className='selectDropdownBtnInner'>
                     <div className="selectedText">
                         {Selected ? Selected : title}
@@ -38,7 +70,7 @@ const CustomDropdown = ({ options, title }) => {
                     <span className="material-icons"> expand_more </span>
                 </div>
                 {Active ?
-                    <div className="selectDropdown py-2">
+                    <div  ref={listRef} className="selectDropdown py-2">
                         {options.map((option, index) => (
                             <div key={index} onClick={(e) => {
                                 setSelected(option)
@@ -50,22 +82,6 @@ const CustomDropdown = ({ options, title }) => {
         </>
     )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -1,3 +1,4 @@
+
 .headerSearchWrapper {
     position: relative;
     max-width: 600px;
@@ -106,16 +107,16 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
-    padding: 12px 0px 12px 0px;
+    padding: 12px 12px 12px 12px;
    
   }
   .tableWrapper .table th:first-child {
 
-    padding: 14px 0px 15px 20px;
+    padding: 12px 0px 12px 20px;
   }
 
   .tableWrapper .table td {
-    padding: 12px 0px 12px 0px;
+    padding: 12px 12px 12px 12px;
    
   }
   .tableWrapper .table td:first-child {
@@ -135,11 +136,11 @@
    }
    .expiredMemberReport .tableWrapper .table th {
     
-    padding: 12px 30px 12px 25px;
+    padding: 12px 12px 12px 12px;
   }
   .expiredMemberReport .tableWrapper .table td {
    
-    padding: 12px 11px 12px 25px;
+    padding: 12px 12px 12px 12px;
   }
   .tableWrapper .table td:nth-last-child(2) {
     padding: 12px 0px 12px 0px;
@@ -159,7 +160,7 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
-    padding: 12px 0px 12px 15px;
+    padding: 12px 12px 12px 12px;
   }
   .paymentsTableWrapper .table th:first-child {
 
@@ -167,7 +168,7 @@
   }
 
   .paymentsTableWrapper .table td {
-    padding: 12px 0px 12px 12px;
+    padding: 12px 12px 12px 12px;
    
   }
   .paymentsTableWrapper .table td:first-child {
@@ -255,8 +256,9 @@ table {
     border-radius: 8px;
     padding: 8px;
     display: inline-block;
-    max-width: 116px;
+    max-width: 250px;
     line-height: 16px;
+    // min-width: 120px;
     &.hot {
         background: #DE3730;;
         border: transparent;
@@ -295,7 +297,7 @@ table {
         border-radius: 100%;
         @extend .transition;
         border: solid 1px transparent;
-        margin-right: 12px;
+        // margin-right: 12px;
         &:click{border: 1px solid #7A7A7A;}
         &.active,
         &:focus,
@@ -387,6 +389,16 @@ table {
                 background: $cancelBtn;
                 @extend .transition;
             }
+        }
+        .paginationMoreHoriz .material-icons-outlined{
+            margin-top: 12px;
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 16px;
+text-align: center;
+color: #B6B6B6;
+padding: 0px 9px 0px 9px;
         }
     }
 }
@@ -660,14 +672,13 @@ display: inline-flex;
     border: 0;
     border-radius: 8px;
     height: 40px;
-    padding: 8px 16px 8px 12px;
+    padding: 8px 12px 8px 16px;
     font-weight: 300;
     font-size: 14px;
     color: #ffffff;
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    cursor: pointer;
     width: 206px;
     // margin-top: -4px;
     @extend .transition;
@@ -677,6 +688,52 @@ display: inline-flex;
         @extend .transition;
     }
 }
+.editMemberProfileBtn {
+    background: #2B2B2B;
+    border: 0;
+    border-radius: 8px;
+    height: 40px;
+    padding: 8px 16px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: #FFFFFF;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    @extend .transition;
+    cursor: pointer;
+    &:hover{
+        background: #545454;
+    }
+  }
+  .editMemberPicIcon{
+    position: absolute;
+left: 22px;
+top: 87px;
+background: #0006;
+width: 96px;
+height: 96px;
+align-items: center;
+justify-content: center;
+display: flex;
+border-radius: 50%;
+cursor: pointer;
+  }
+  .viewOnlyProfile {
+.form-control{
+    pointer-events: none;
+}
+     .form-check {
+        pointer-events: none;
+      }
+      textarea{
+        pointer-events: none;
+      }
+  }
+
+
 
 .smsBoxWrapper {
     display: flex;
@@ -727,7 +784,7 @@ display: inline-flex;
     background: $inputBg;
     border-radius: 8px;
     height: 76px;
-    width: 273px;
+    width: 272px;
     padding: 8px;
     display: flex;
     align-items: center;
@@ -765,6 +822,9 @@ display: inline-flex;
             font-size: 32px;
         }
     }
+
+
+    
     .title {
         font-weight: 700;
         font-size: 16px;
@@ -807,7 +867,10 @@ display: inline-flex;
         }
     }
 }
-
+.salesReportCards .enquiriesBtn{ 
+            
+    width: 216px;
+}
 .membershipBtns{
     .enquiriesBtn {
         width: 216px;
@@ -1202,6 +1265,7 @@ ul {
     display: flex;
     align-items: center;
     color: $label1;
+    cursor: pointer;
 }
 .HelpSupport {
     position: absolute;
@@ -1403,3 +1467,525 @@ border-radius: 8px;
 padding: 4px 4px 4px 8px;
 gap: 4px;
  }
+
+//  =============Member Profile Pages=============
+
+.memberInfoBoxes{
+    border: 1px solid #7A7A7A;
+    border-radius: 8px;
+    background: #403F3F;
+.boxStart{
+   
+    border-right: 1px solid #7A7A7A;
+h5{
+    font-weight: 600;
+    font-size: 14px;
+    color: #F5F5F5;
+    margin-bottom: 6px;
+}
+p{
+    font-weight: 500;
+font-size: 12px;
+line-height: 24px;
+color: #B6B6B6;
+}
+.infoMainBox{
+    padding: 16px 0px 0px 16px;
+}
+
+}
+.boxStart:last-child{
+    border: none;
+}
+.secondRowInfoBox{
+    border-top: 1px solid #7A7A7A;
+}
+
+}
+
+.membershipsTabsStyle{
+
+ .createDietPlanModalTabs.TabWrapper .ModalFormTabs {
+    width: auto;
+    padding: 0px 10px 5px 10px;
+  }
+  .createDietPlanModalTabs.TabWrapper .nav-link.active::after {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+.chipPayment{
+    width:150px
+}
+.documentBroweser{
+    padding: 20px 0px 6px 0px;
+    background: #383838;
+border: 1px dashed #7A7A7A;
+border-radius: 8px;
+width: 264px;
+p{
+    font-weight: 500;
+font-size: 12px;
+line-height: 16px;
+text-align: center;
+color: #B6B6B6;
+}
+span{
+    color: #B6B6B6;
+}
+}
+.docBroweserLable{
+    font-weight: 500;
+font-size: 12px;
+line-height: 16px;
+color: rgba(255, 255, 255, 0.8);
+margin-bottom: 10px;
+}
+.addedBiometric{
+  background-color:  $green;
+}
+// ==============Attendance Page===============
+
+.attendanceTotal{
+
+    .done{
+        color: #2EB85C;
+    }
+    .hot{
+        color: #DE3730;
+    }
+}
+.monthAndDropDown{
+    position: absolute;
+    top: -115px;
+}
+.attendanceMainSection{
+    .tableWrapper {
+        overflow-x: inherit;
+overflow-y: inherit;
+      }
+}
+.singleMonthsSec{
+    .singleMonths{
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        color: #F5F5F5;
+        width: 100px;
+justify-content: start;
+display: flex;
+    }
+    button{
+        color: #B6B6B6;
+    }
+}
+.attendanceMonthYear {
+    margin-top: -8px;
+    select{
+    width: 126px;
+    height: 40px;
+    border: 1px solid #7A7A7A;
+    border-radius: 8px;
+    background:  #2B2B2B;
+      background-position-x: 0%;
+      background-position-y: 0%;
+      background-repeat: repeat;
+      background-image: none;
+      background-size: auto;
+    padding: 8px 14px 8px 12px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #B6B6B6;
+    cursor: pointer;
+    &:hover{
+        background: #403F3F;
+    }
+    }
+}
+
+.attendanceMainSection{
+    .react-datepicker__day, .react-datepicker__time-name{
+        display: inline-flex;
+        line-height: 1.7rem;
+        text-align: center;
+        margin: 0;
+        width: 161px;
+        height: 160px;
+        border-width: 0px 1px 1px 0px;
+        border-style: solid;
+        border-color: #3A3A3A;
+        justify-content: center;
+        align-items: center;
+        font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 32px;
+      }
+      .react-datepicker__month-container {
+        background: #Fff0 !important;
+    }
+    .react-datepicker__header {
+        background: #fff0 !important;
+      }
+      .react-datepicker__day--outside-month {
+        visibility: visible !important;
+        color: #7A7A7A !important;
+      }
+      .react-datepicker__month {
+        margin: 0 !important;
+        
+      }
+      .react-datepicker__day-names {
+        display: inline-flex;
+      }
+      .react-datepicker__day-name {
+        font-weight: 500;
+font-size: 14px;
+line-height: 24px !important;
+text-align: center !important;
+color: #B6B6B6 !important;
+width: 161px;
+height: 40px;
+border-width: 1px 1px 1px 0px;
+border-style: solid;
+border-color: #3A3A3A;
+margin: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+      }
+      .react-datepicker__month-container {
+        margin-top: -20px;
+        position: relative;
+        margin-top: -20px;
+padding-bottom: 0px;
+border-bottom: none;
+      }
+      .react-datepicker__day--selected, .react-datepicker__day--in-selecting-range, .react-datepicker__day--in-range, .react-datepicker__month-text--selected, .react-datepicker__month-text--in-selecting-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--selected, .react-datepicker__quarter-text--in-selecting-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--selected, .react-datepicker__year-text--in-selecting-range, .react-datepicker__year-text--in-range {
+        background: #383838;
+      }
+}
+.workoutRowTwo{
+    p{
+    font-weight: 500;
+font-size: 12px;
+line-height: 24px;
+text-decoration-line: underline;
+color: #F9804C;
+}
+.workoutRowCalendar{
+    width: 170px;
+}
+}
+.workoutBoxesRow{
+    padding-left: 8px;
+    .workoutBox{
+        padding: 0;
+        background: #2B2B2B;
+border: 1px solid #3A3A3A;
+box-shadow: 0px 4px 12px #1A1A1A;
+border-radius: 8px;
+margin-right: 20px;
+margin-bottom: 20px;
+width: 360px;
+    .workoutBoxHeader{
+        border-bottom: 1px solid #3A3A3A;
+        padding: 12px 0px 12px 20px;
+        font-weight: 500;
+font-size: 12px;
+line-height: 16px;
+color: rgba(255, 255, 255, 0.8);
+
+
+    }
+    .workoutBoxBody{
+        padding: 24px 20px 24px 20px;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 20px;
+        color: #FFFFFF;
+        align-items: center;
+        .workoutBoxBtn{
+            width: 47px;
+background: #2EB85C;
+border-radius: 8px;
+padding: 8px;
+font-weight: 500;
+font-size: 12px;
+line-height: 16px;
+text-align: center;
+        }
+        .material-icons{
+            cursor: pointer;
+        }
+    }
+    }
+}
+// =============Full Calendar =========
+#fullCalendar{
+   width: 100%;
+   .eventModalBTN{
+    font-weight: 600;
+font-size: 12px;
+line-height: 16px;
+text-align: center;
+color: rgba(255, 255, 255, 0.8);
+   }
+.EventBTN{
+    padding: 0px 51px;
+height: 16px;
+border-radius: 0px 0px 4px 4px;
+border: none !important;
+top: -17px;
+margin: 0;
+font-size: 10px;
+line-height: 16px;
+text-align: center;
+color: rgba(255, 255, 255, 0.8);
+
+   }
+   .present{
+    background: #2EB85C;
+   }
+   .absent{
+    background: #DE3730;
+   }
+
+   .fc-theme-standard td, .fc-theme-standard th {
+    border-width: 1px 1px 0px 0px;
+    border-color: #3A3A3A;
+  }
+  .fc-theme-standard .fc-scrollgrid {
+    border-width: 0px;
+      border-right-width: 0px;
+      border-bottom-width: 0px;
+    border-style: solid;
+    border-color: #3A3A3A;
+  }
+  .fc .fc-timegrid-divider {
+    padding: 0 0 0px;
+  }
+  .fc-day-today{
+    background: #383838;
+  }
+  .fc .fc-timegrid-col.fc-day-today {
+    background: transparent;
+  }
+  .fc-scrollgrid-section tbody tr {
+    height: 64px;
+  }
+  tbody, td, tfoot, th, thead, tr {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #3A3A3A;
+  }
+  .fc-v-event {
+    display: block;
+    background: none;
+    border: none;
+  }
+  .fc-timegrid-event-harness-inset .fc-timegrid-event, .fc-timegrid-event.fc-event-mirror, .fc-timegrid-more-link {
+    box-shadow: none;
+    padding: 10px 0px 0px 4px;
+    justify-content: center;
+    display: flex;
+  }
+  .fc .fc-timegrid-axis-cushion {
+    display: none;
+  }
+  .fc-daygrid-body.fc-daygrid-body-unbalanced.fc-daygrid-body-natural {
+    
+  }
+  .fc-daygrid-body.fc-daygrid-body-unbalanced.fc-daygrid-body-natural .fc-day-today {
+    background: transparent;
+  }
+  table colgroup col{
+    width: 140px !important;
+  }
+  .fc-timegrid-slot.fc-timegrid-slot-label.fc-scrollgrid-shrink {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    border: none !important;
+  }
+  .fc-toolbar-chunk {
+    position: relative;
+  }
+  .fc-button-group {
+    position: absolute;
+    top: 53px;
+    left: -540px;
+    background: none;
+    z-index: 9;
+  }
+  .fc-button.fc-button-primary {
+    background: none;
+    border: none;
+  }
+  .fc-header-toolbar.fc-toolbar.fc-toolbar-ltr {
+    margin-bottom: 0px;
+    height: 40px;
+    padding: 0;
+    border: none;
+  }
+  .fc-col-header-cell-cushion{
+    // display: none;
+  }
+  .fc-scrollgrid-sync-inner {
+    
+
+  }
+  .fc-scrollgrid-sync-inner{
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    width: 50px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+   
+    padding-top: 16px;
+display: flex;
+  }
+//   .lastThreeWords:nth-child(2){
+//     font-weight: 500;
+//     font-size: 14px;
+//     line-height: 24px;
+//     color: #B6B6B6;
+//     margin: 0 auto;
+//     width: 20px;
+//     display: flex;
+//   }
+  .fc-day-today .fc-col-header-cell-cushion{
+    color: #F9804C;
+  }
+  
+  
+}
+.tableHeading .currentMonth {
+    font-weight: 700;
+font-size: 16px;
+line-height: 24px;
+color: #F5F5F5;
+}
+.presentDays{
+    font-size: 14px;
+    line-height: 24px;
+    color: #2EB85C;
+    display: inline-flex;
+    gap: 8px;
+    padding-left: 12px;
+    align-items: center;
+    span{
+        font-size: 16px;
+    }
+  }
+  .absentDays{
+    font-size: 14px;
+    line-height: 24px;
+    color: #DE3730;
+    display: inline-flex;
+    gap: 8px;
+    padding-left: 20px;
+    align-items: center;
+    span{
+        font-size: 16px;
+    }
+  }
+  .customFullMonthYear {
+  
+  select{
+    appearance: none;
+    background-image: url("../images/arrow-down-grey.svg") !important;
+background-repeat: no-repeat !important;
+background-position: right 1rem top 50% !important;
+background-size: 0.8rem auto !important;
+height: 40px;
+border: 1px solid #7A7A7A;
+border-radius: 8px;
+// background: #403F3F;
+background: #2B2B2B;
+padding: 8px 14px 8px 12px;
+font-family: "Inter";
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 24px;
+color: #B6B6B6;
+cursor: pointer;
+}
+  }
+.monthDropDownFull  {
+    width: 126px;
+}
+.yearDropDownFull  {
+    width: 96px;
+   margin-left: 8px;
+}
+
+#configuration{
+.configLable{
+    font-weight: 500;
+font-size: 12px;
+line-height: 16px;
+color: #7A7A7A;
+gap: 6px !important;
+}
+.configBtn{
+    padding: 8px 16px 8px 12px;
+gap: 8px;
+width: 93px !important;
+height: 40px;
+background: #2B2B2B;
+border-radius: 8px;
+border: none;
+font-weight: 500;
+font-size: 14px;
+line-height: 24px;
+color: #FFFFFF;
+}
+.configFormControl{
+    height: 120px;
+    border: 1px solid #7A7A7A;
+    border-radius: 8px;
+    background: #1E1E20;
+    &::placeholder{
+        color: #B6B6B6;
+    }
+}
+.termC{
+    font-weight: 700;
+font-size: 16px;
+line-height: 24px;
+display: flex;
+align-items: center;
+color: #F5F5F5;
+
+p{
+    margin-bottom: 8px;
+}
+}
+.configDropDown .dropDownFullWidth{
+    width: 516px;
+}
+.ModalFromCheckBox label{
+    font-weight: 500;
+font-size: 14px;
+line-height: 24px;
+color: #B6B6B6;
+}
+.ModalFromCheckBox .checkbox .form-check input[type="checkbox"]:checked ~ label {
+    color: #ffffff;
+  }
+  .configBtnAndText{
+    gap: 20px;
+  }
+  .ModalFromCheckBox .checkbox .form-check {
+    gap: 14px;
+}
+}

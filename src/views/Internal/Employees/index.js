@@ -24,7 +24,7 @@ const Employees = () => {
 
     const handle = ["Handle1", "Handle2", "Handle3", "This month", "Last month", "This year", "Custom"];
     const lead = ["All time", "Today", "Yesterday", "This month", "Last month", "This year", "Custom"];
-
+    const page = ["All", "10", "20", "50"]
 
     const [absentEmploye, setAbsentEmploye] = useState(false);
     const [active, setActive] = useState(true);
@@ -49,7 +49,7 @@ const Employees = () => {
         <>
             <h1 className="h1 flex spaceBetween alignItems mt-1">
                 Employees
-                <div className='addEnquiryBtn'>
+                <div onClick={() => setaddMember(true)} className='addEnquiryBtn'>
                     <span className="material-icons"> add </span>
                     Add Employees
                 </div>
@@ -162,19 +162,19 @@ const Employees = () => {
                         <div className='tableHeading'>
                             <h2 className='h2'>Active Employees</h2>
                             <div className='smsBoxWrapper'>
-                                <div className='smsRemainingBtn ' onClick={() => setSmsModal(true)}>
+                                <div className='smsRemainingBtn ' >
                                     <span class="material-icons">
                                         accessibility_new
                                     </span>
                                     Add Access Control
 
                                 </div>
-                                <ModalForm
+                                {/* <ModalForm
                                     name={'smsModal'}
 
                                     show={smsModal}
                                     onHide={() => setSmsModal(false)}
-                                />
+                                /> */}
 
 
                             </div>
@@ -194,7 +194,7 @@ const Employees = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {[...Array(10)].map((x, i) =>
+                                    {[...Array(5)].map((x, i) =>
                                         <tr>
                                             <td> 260449</td>
                                             <td>
@@ -288,10 +288,14 @@ const Employees = () => {
                                 </ul>
                             </div>
 
-                            <div className={classNames("flex alignItems spaceBetween", styles.filterWrapper)}>
-                                <div className={styles.sortBy}>Rows per page</div>
-                                <CustomDropdown options={handle} title=" Select Row" />
+                            <div className={classNames("flex alignItems spaceBetween rowPerPageDropDown", styles.filterWrapper)}>
+                            <div className={styles.sortBy}>Rows per page</div>
+                            
+                            <div className="selectedText" >
+                                <CustomDropdown options={page} title="All" />
                             </div>
+                            {/* </div> */}
+                        </div>
 
                         </div>
                     </div>

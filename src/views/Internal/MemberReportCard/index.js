@@ -34,12 +34,20 @@ function CustomToggle({ children, eventKey }) {
 
 const MemberReportCard = () => {
     const [addWorkout, setaddWorkout] = useState(false);
-
-    const [GenerateReport, setGenerateReport] = useState(false);
+    const page = ["All", "1", "2", "3", "4", "5", "6"];
+    const [EditReportCard, setEditReportCard] = useState(false);
     return (
         <>
             <h1 className="h1 flex spaceBetween alignItems">
                 Member Report Card
+            <div onClick={() => setEditReportCard(true)} className='addEnquiryBtn'>
+                    <span className="material-icons"> add </span>
+                    Add Report Card
+                </div>
+
+
+
+                {/* <ModalForm name={'addEnquiry'} show={addEnquiry} onHide={() => setAddEnquiryModal(false)} /> */}
             </h1>
 
 
@@ -49,27 +57,11 @@ const MemberReportCard = () => {
             <div className='row text-end'>
                 <div className='col-lg-12'>
                     <div className='categoryWrapper'>
-
-                        <div className={classNames("headerSearchWrapper member-search ", styles.dashboardSearch)}>
-                            <input type="text" placeholder="Search Category" className="formControl" />
+                        <div className={classNames("headerSearchWrapper member-search mt-1", styles.dashboardSearch)}>
+                            <input type="text" placeholder="Search " className="formControl" />
                             <span className="material-icons searchIcon"> search </span>
                             {/* <span className="material-icons closeIcon"> close </span> */}
-                        </div>
-
-
-                        <div className='downloadReoprtBtn ml-auto' onClick={() => setGenerateReport(true)}>
-                        <span className="material-icons downloadIcon "> file_download </span>
-                        Download XLS Report
-
-
-                            
-                    </div>
-                     <ModalForm
-
-                         name={'GenerateReport'}
-                            show={GenerateReport}
-                            onHide={() => setGenerateReport(false)}
-                            />
+                        </div>            
                     </div>
                 </div>
 
@@ -77,384 +69,107 @@ const MemberReportCard = () => {
 
             </div>
             <section className={classNames('section memberReportCard', styles.followUpsWrapper)}>
-                <h3 className='subtitle ' >Total PT Report (540)</h3>
-                <div className="AccordionDesign">
-
-
-                    <Accordion defaultActiveKey="0">
-                        <Card className='AccordionItemWrapper'>
-                            <Card.Header className='AccordionHeader'>
-                                <div className='userAvatar'>
-                                    <div className='userImg'>
-                                        <img src={userImg} alt="user" />
-                                    </div>
-                                    <div className='userContent'>
-                                        <div className='title'>Sonu Sharma</div>
-                                        <div className='subtitle'>9988776655 </div>
-                                    </div>
-                                </div>
-
-                                <div className='d-flex align-items-center gap-2'>
-                                    <span class="material-icons BgIcon">
-                                        file_download
-                                    </span>
-                                    <span class="material-icons BgIcon">
-                                        edit
-                                    </span>
-                                    <CustomToggle eventKey="0"> <span class="material-icons text-white  ms-3" >
-                                        expand_more
-                                    </span>
-                                    </CustomToggle>
-                                </div>
-                            </Card.Header>
-                            <Accordion.Collapse eventKey="0">
-                                <div>
-
-                                    <div className='AccordionData'>
-                                        <div className='text-center py-2 AccordionTitle'>
-                                            Super Sets</div>
-
-                                        <Accordion defaultActiveKey="0">
-                                            <Card className='InnerAccordionWrapper'>
-                                                <Card.Header className='AccordionHeader'>
-                                                    <div className='AccordionTitle'>Chest</div>
-
-                                                    <div className='d-flex align-items-center gap-3'>
-                                                        <CustomToggle eventKey="0"> <span class="material-icons text-white" >
-                                                            expand_less
-                                                        </span>
-                                                        </CustomToggle></div>
-                                                </Card.Header>
-                                                <Accordion.Collapse eventKey="0">
-                                                    <div>
-
-                                                        <div className='InnerAccordionData'>
-                                                            <Table>
-
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td>PUSH-UPS-CLOSE GRIP TRICEPS
-                                                                            <p> Exercise</p>
-                                                                        </td>
-                                                                        <td>24 <p> Reps</p></td>
-                                                                        <td>5 <p> Sets</p></td>
-                                                                        <td>24kg <p> Weight</p></td>
-                                                                        <td>06:30pm
-                                                                            <p> Time</p>
-                                                                        </td>
-
-
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <td>PUSH-UPS-CLOSE GRIP TRICEPS
-                                                                            <p> Exercise</p>
-                                                                        </td>
-                                                                        <td>24 <p> Reps</p></td>
-                                                                        <td>5 <p> Sets</p></td>
-                                                                        <td>24kg <p> Weight</p></td>
-                                                                        <td>06:30pm
-                                                                            <p> Time</p>
-                                                                        </td>
-
-
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>PUSH-UPS-CLOSE GRIP TRICEPS
-                                                                            <p> Exercise</p>
-                                                                        </td>
-                                                                        <td>24 <p> Reps</p></td>
-                                                                        <td>5 <p> Sets</p></td>
-                                                                        <td>24kg <p> Weight</p></td>
-                                                                        <td>06:30pm
-                                                                            <p> Time</p>
-                                                                        </td>
-
-
-                                                                    </tr>
-                                                                </tbody>
-                                                            </Table>
-
-
-
-                                                        </div>
-                                                    </div>
-
-
-                                                </Accordion.Collapse>
-                                            </Card>
-
-                                        </Accordion>
-
-                                        <Accordion defaultActiveKey="0">
-                                            <Card className='InnerAccordionWrapper'>
-                                                <Card.Header className='AccordionHeader'>
-                                                    <div className='AccordionTitle'>Arms</div>
-
-                                                    <div className='d-flex align-items-center gap-3'>
-                                                        <CustomToggle eventKey="0"> <span class="material-icons text-white" >
-                                                            expand_less
-                                                        </span>
-                                                        </CustomToggle></div>
-                                                </Card.Header>
-                                                <Accordion.Collapse eventKey="0">
-                                                    <div>
-
-                                                        <div className='InnerAccordionData'>
-                                                            <Table>
-
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td>PUSH-UPS-CLOSE GRIP TRICEPS
-                                                                            <p> Exercise</p>
-                                                                        </td>
-                                                                        <td>24 <p> Reps</p></td>
-                                                                        <td>5 <p> Sets</p></td>
-                                                                        <td>24kg <p> Weight</p></td>
-                                                                        <td>06:30pm
-                                                                            <p> Time</p>
-                                                                        </td>
-
-
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <td>PUSH-UPS-CLOSE GRIP TRICEPS
-                                                                            <p> Exercise</p>
-                                                                        </td>
-                                                                        <td>24 <p> Reps</p></td>
-                                                                        <td>5 <p> Sets</p></td>
-                                                                        <td>24kg <p> Weight</p></td>
-                                                                        <td>06:30pm
-                                                                            <p> Time</p>
-                                                                        </td>
-
-
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>PUSH-UPS-CLOSE GRIP TRICEPS
-                                                                            <p> Exercise</p>
-                                                                        </td>
-                                                                        <td>24 <p> Reps</p></td>
-                                                                        <td>5 <p> Sets</p></td>
-                                                                        <td>24kg <p> Weight</p></td>
-                                                                        <td>06:30pm
-                                                                            <p> Time</p>
-                                                                        </td>
-
-
-                                                                    </tr>
-                                                                </tbody>
-                                                            </Table>
-
-
-
-                                                        </div>
-                                                    </div>
-
-
-                                                </Accordion.Collapse>
-                                            </Card>
-
-                                        </Accordion>
-
-                                    </div>
-                                </div>
-
-
-                            </Accordion.Collapse>
-                        </Card>
-
-                    </Accordion>
-                    <Accordion defaultActiveKey="0">
-                        <Card className='AccordionItemWrapper'>
-                            <Card.Header className='AccordionHeader'>
-                                <div className='userAvatar'>
-                                    <div className='userImg'>
-                                        <img src={userImg} alt="user" />
-                                    </div>
-                                    <div className='userContent'>
-                                        <div className='title'>Sonu Sharma</div>
-                                        <div className='subtitle'>9988776655 </div>
-                                    </div>
-                                </div>
-
-                                <div className='d-flex align-items-center gap-2'>
-                                    <span class="material-icons BgIcon">
-                                        file_download
-                                    </span>
-                                    <span class="material-icons BgIcon">
-                                        edit
-                                    </span>
-                                    <CustomToggle eventKey="0"> <span class="material-icons text-white  ms-3" >
-                                        expand_more
-                                    </span>
-                                    </CustomToggle>
-                                </div>
-                            </Card.Header>
-                            <Accordion.Collapse eventKey="0">
-                                <div>
-
-                                    <div className='AccordionData'>
-                                        <div className='text-center py-2 AccordionTitle'>
-                                            Super Sets</div>
-
-                                        <Accordion defaultActiveKey="0">
-                                            <Card className='InnerAccordionWrapper'>
-                                                <Card.Header className='AccordionHeader'>
-                                                    <div className='AccordionTitle'>Chest</div>
-
-                                                    <div className='d-flex align-items-center gap-3'>
-                                                        <CustomToggle eventKey="0"> <span class="material-icons text-white" >
-                                                            expand_less
-                                                        </span>
-                                                        </CustomToggle></div>
-                                                </Card.Header>
-                                                <Accordion.Collapse eventKey="0">
-                                                    <div>
-
-                                                        <div className='InnerAccordionData'>
-                                                            <Table>
-
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td>PUSH-UPS-CLOSE GRIP TRICEPS
-                                                                            <p> Exercise</p>
-                                                                        </td>
-                                                                        <td>24 <p> Reps</p></td>
-                                                                        <td>5 <p> Sets</p></td>
-                                                                        <td>24kg <p> Weight</p></td>
-                                                                        <td>06:30pm
-                                                                            <p> Time</p>
-                                                                        </td>
-
-
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <td>PUSH-UPS-CLOSE GRIP TRICEPS
-                                                                            <p> Exercise</p>
-                                                                        </td>
-                                                                        <td>24 <p> Reps</p></td>
-                                                                        <td>5 <p> Sets</p></td>
-                                                                        <td>24kg <p> Weight</p></td>
-                                                                        <td>06:30pm
-                                                                            <p> Time</p>
-                                                                        </td>
-
-
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>PUSH-UPS-CLOSE GRIP TRICEPS
-                                                                            <p> Exercise</p>
-                                                                        </td>
-                                                                        <td>24 <p> Reps</p></td>
-                                                                        <td>5 <p> Sets</p></td>
-                                                                        <td>24kg <p> Weight</p></td>
-                                                                        <td>06:30pm
-                                                                            <p> Time</p>
-                                                                        </td>
-
-
-                                                                    </tr>
-                                                                </tbody>
-                                                            </Table>
-
-
-
-                                                        </div>
-                                                    </div>
-
-
-                                                </Accordion.Collapse>
-                                            </Card>
-
-                                        </Accordion>
-
-                                        <Accordion defaultActiveKey="0">
-                                            <Card className='InnerAccordionWrapper'>
-                                                <Card.Header className='AccordionHeader'>
-                                                    <div className='AccordionTitle'>Arms</div>
-
-                                                    <div className='d-flex align-items-center gap-3'>
-                                                        <CustomToggle eventKey="0"> <span class="material-icons text-white" >
-                                                            expand_less
-                                                        </span>
-                                                        </CustomToggle></div>
-                                                </Card.Header>
-                                                <Accordion.Collapse eventKey="0">
-                                                    <div>
-
-                                                        <div className='InnerAccordionData'>
-                                                            <Table>
-
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td>PUSH-UPS-CLOSE GRIP TRICEPS
-                                                                            <p> Exercise</p>
-                                                                        </td>
-                                                                        <td>24 <p> Reps</p></td>
-                                                                        <td>5 <p> Sets</p></td>
-                                                                        <td>24kg <p> Weight</p></td>
-                                                                        <td>06:30pm
-                                                                            <p> Time</p>
-                                                                        </td>
-
-
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <td>PUSH-UPS-CLOSE GRIP TRICEPS
-                                                                            <p> Exercise</p>
-                                                                        </td>
-                                                                        <td>24 <p> Reps</p></td>
-                                                                        <td>5 <p> Sets</p></td>
-                                                                        <td>24kg <p> Weight</p></td>
-                                                                        <td>06:30pm
-                                                                            <p> Time</p>
-                                                                        </td>
-
-
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>PUSH-UPS-CLOSE GRIP TRICEPS
-                                                                            <p> Exercise</p>
-                                                                        </td>
-                                                                        <td>24 <p> Reps</p></td>
-                                                                        <td>5 <p> Sets</p></td>
-                                                                        <td>24kg <p> Weight</p></td>
-                                                                        <td>06:30pm
-                                                                            <p> Time</p>
-                                                                        </td>
-
-
-                                                                    </tr>
-                                                                </tbody>
-                                                            </Table>
-
-
-
-                                                        </div>
-                                                    </div>
-
-
-                                                </Accordion.Collapse>
-                                            </Card>
-
-                                        </Accordion>
-
-                                    </div>
-                                </div>
-
-
-                            </Accordion.Collapse>
-                        </Card>
-
-                    </Accordion>
-
-
-
-
+                <h3 className='subtitle ' >Member Report Card (540)</h3>
+                <div className='tableWrapperOuter'>
+                    <div className='tableHeading'>
+                        <h2 className='h2'>Member Report Card</h2>
+
+                    </div>
+                    <div className='tableWrapper'>
+                        <table className='table'>
+                            <thead>
+                                <tr>
+
+                                   
+                                    <th>Members</th>
+                                   
+                            
+                                    <th> Date</th>
+                                    <th> Number</th>
+                                    
+
+
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {[...Array(5)].map((x, i) =>
+                                <tr>
+
+                                  
+                                    <td>
+                                        <div className='userAvatar'>
+                                            <div className='userImg'>
+                                                <img src={userImg} alt="user" />
+                                            </div>
+                                            <div className='userContent'>
+                                                <div className='title'>Sonu Sharma</div>
+                                                {/* <div className='subtitle'>9988776655</div> */}
+                                            </div>
+                                        </div>
+                                    </td>
+                                    
+                                    <td> 02/10/2022</td>
+                                   
+                                    <td> 9876543210</td>
+
+
+                                    <td className='textRight'>
+                                        <div className='dottedBtnWrapper ml-auto'>
+                                            <div id="linkabkeDropdwon" className='' >
+                                                <DropdownButton title="more_vert" drop='bottom' className="material-icons dottedbtn ">
+
+                                                    <Dropdown.Item as="button" className='item1' onClick={() => setEditReportCard(true)}> Edit Report Card</Dropdown.Item>
+                                                    
+
+                                                </DropdownButton>
+                                                <ModalForm
+
+                                                    name={'editReportCard'}
+                                                    show={EditReportCard}
+                                                    onHide={() => setEditReportCard(false)}
+                                                />
+                                              
+
+                                            </div>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                            )}
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div className='paginationWrapperOuter flex alignItems spaceBetween'>
+                        <div className='paginationWrapper'>
+                            <ul className='paginationInner'>
+                                <li className='paginationItem'>
+                                    1
+                                </li>
+                                <li className='paginationItem active'>
+                                    2
+                                </li>
+                                <li className='paginationItem'>
+                                    3
+                                </li>
+                                <li className='paginationItem'>
+                                    4
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div className={classNames("flex alignItems spaceBetween rowPerPageDropDown", styles.filterWrapper)}>
+                            <div className={styles.sortBy}>Rows per page</div>
+                            
+                            <div className="selectedText" >
+                                <CustomDropdown options={page} title="All" />
+                            </div>
+                            {/* </div> */}
+                        </div>
+
+                    </div>
                 </div>
             </section>
             <div className='HelpSupport'>

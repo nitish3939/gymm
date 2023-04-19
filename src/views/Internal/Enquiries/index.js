@@ -12,6 +12,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 // import DropdownLinable from './../components/DropdownLinable'
 
 import Form from 'react-bootstrap/Form';
+import CustomCalendarDropDown from '../components/CustomDropdown/CustomCalendarDropDown';
 
 
 const Enquiries = () => {
@@ -28,6 +29,7 @@ const Enquiries = () => {
     const trial = ["All time", "Today", "Yesterday", "This month", "Last month", "This year", "Custom"];
     const month = ["All time", "Today", "Yesterday", "This month", "Last month", "This year", "Custom"];
     const rowPerPage = ["5","10","20", "50"]
+    const followUp =["Yes", "No"]
     return (
         <>
             <h1 className="h1 flex spaceBetween alignItems pt-1">
@@ -104,12 +106,12 @@ const Enquiries = () => {
                         <div className="selectedText" >
                             <CustomDropdown options={lead} title=" Lead Type" />
                         </div>
-
-                        <div className="selectedText" >
+                       
+                        <div className="selectedText dropDownIfFirst" >
                             <CustomDropdown options={trial} title="Trial Booked" />
                         </div>
-                        <div className="selectedText dropDownIfFirst" >
-                            <CustomDropdown options={month} title="Last 3 months" />
+                        <div className="selectedText dropDownIfFirst CalendarWidthFixed" >
+                            <CustomCalendarDropDown  title="Last 3 months" />
                         </div>
 
 
@@ -118,6 +120,15 @@ const Enquiries = () => {
                             <span className="material-icons searchIcon"> search </span>
                             {/* <span className="material-icons closeIcon"> close </span> */}
                         </div>
+                        <div className='FormOutlineBtn ml-auto ms-0 w-auto gap-3 d-flex align-items-center'>
+                            Membership Renewal 
+                            <span className="material-icons downloadIcon "> close </span>
+                         </div>
+                        
+                         <div className='addEnquiryBtn gap-3 d-flex align-items-center'>
+                               Warm
+                            <span className="material-icons downloadIcon "> close </span>
+                           </div>
                     </div>
                 </div>
 

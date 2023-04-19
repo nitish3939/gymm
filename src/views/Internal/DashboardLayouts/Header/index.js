@@ -5,6 +5,7 @@ import logo from "./../../assets/images/logo.png";
 import profileImg from "./../../assets/images/profile-img.jpeg";
 import classNames from 'classnames';
 
+import { useLocation } from 'react-router-dom';
 
 
 import { useRef, useState } from 'react';
@@ -31,6 +32,10 @@ const HeaderDashboard = ({ toggle }) => {
     
 //     // this.onButtonClick()
 //     }; 
+
+
+// Get User Location TO add classs to Active Nav 
+const location = useLocation();
 
 
 
@@ -85,7 +90,13 @@ const HeaderDashboard = ({ toggle }) => {
                                 </label>
                             </div>
 
-                            <Link to="/" className={styles.link}> Configurations </Link>
+                            
+                             
+                              <Link to="/configurations" className={styles.link}> 
+                                 Configurations 
+                              
+                              </Link>
+                             
                             <Link to="/" className={styles.link}> Help & Center </Link>
                         </div>
                         <div className={styles.logoutWrapper}>

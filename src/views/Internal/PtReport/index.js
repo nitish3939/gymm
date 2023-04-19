@@ -19,6 +19,8 @@ const PtReport = () => {
 
     const handle = ["Handle1", "Handle2", "Handle3", "This month", "Last month", "This year", "Custom"];
     const lead = ["All time", "Today", "Yesterday", "This month", "Last month", "This year", "Custom"];
+    const page = ["All", "10", "20", "50"]
+
     const [GenerateReport, setGenerateReport] = useState(false);
     return (
         <>
@@ -74,7 +76,7 @@ const PtReport = () => {
                             {/* <span className="material-icons closeIcon"> close </span> */}
                         </div>
                         <div className='downloadReoprtBtn ml-auto' onClick={() => setGenerateReport(true)}>
-                        <span className="material-icons downloadIcon "> file_download </span>
+                        <span className="material-icons-outlined downloadIcon "> file_download </span>
                         Generate XLS Report
 
 
@@ -107,14 +109,12 @@ const PtReport = () => {
                                 <tr>
 
 
-                                    <th>Members</th>
-                                    <th> PT Package</th>
+                                    <th>Trainer Name</th>
+                                    <th> Customer</th>
                                     <th>Package Start Date</th>
                                     <th> Package End Date</th>
-                                    <th> Attended Sessions</th>
                                     <th> Total Sessions</th>
-
-                                    <th> Assigned Trainer</th>
+                                    <th> Attended Sessions</th>
                                     <th> Amount</th>
                                     <th> Status</th>
 
@@ -125,8 +125,6 @@ const PtReport = () => {
                             </thead>
                             <tbody>
                                 <tr>
-
-
                                     <td>
                                         <div className='userAvatar'>
                                             <div className='userImg'>
@@ -139,30 +137,25 @@ const PtReport = () => {
                                         </div>
                                     </td>
                                     <td>
-                                        <span className='chipOutlineFilled'> workout,gym
-                                            work out </span>
+                                    <div className='userAvatar'>
+                                            <div className='userImg'>
+                                                <img src={userImg} alt="user" />
+                                            </div>
+                                            <div className='userContent'>
+                                                <div className='title'>Sonu Sharma</div>
+                                                <div className='subtitle'>9988776655</div>
+                                            </div>
+                                        </div>
                                     </td>
                                     <td> 04/1/2023</td>
                                     <td> 04/1/2023</td>
                                     <td> 40</td>
                                     <td>40</td>
-
-                                    <td>  <div className='userAvatar'>
-                                        <div className='userImg'>
-                                            <img src={userImg} alt="user" />
-                                        </div>
-                                        <div className='userContent'>
-                                            <div className='title'>Sonu Sharma</div>
-
-                                        </div>
-                                    </div></td>
                                     <td> ₹457.63</td>
                                     <td>  <span className='chipOutlineFilled done'> Active </span></td>
 
                                 </tr>
                                 <tr>
-
-
                                     <td>
                                         <div className='userAvatar'>
                                             <div className='userImg'>
@@ -175,30 +168,25 @@ const PtReport = () => {
                                         </div>
                                     </td>
                                     <td>
-                                        <span className='chipOutlineFilled'> workout,gym
-                                            work out </span>
+                                    <div className='userAvatar'>
+                                            <div className='userImg'>
+                                                <img src={userImg} alt="user" />
+                                            </div>
+                                            <div className='userContent'>
+                                                <div className='title'>Sonu Sharma</div>
+                                                <div className='subtitle'>9988776655</div>
+                                            </div>
+                                        </div>
                                     </td>
                                     <td> 04/1/2023</td>
                                     <td> 04/1/2023</td>
                                     <td> 40</td>
                                     <td>40</td>
-
-                                    <td>  <div className='userAvatar'>
-                                        <div className='userImg'>
-                                            <img src={userImg} alt="user" />
-                                        </div>
-                                        <div className='userContent'>
-                                            <div className='title'>Sonu Sharma</div>
-
-                                        </div>
-                                    </div></td>
                                     <td> ₹457.63</td>
                                     <td>  <span className='chipOutlineFilled done'> Active </span></td>
 
                                 </tr>
                                 <tr>
-
-
                                     <td>
                                         <div className='userAvatar'>
                                             <div className='userImg'>
@@ -211,30 +199,25 @@ const PtReport = () => {
                                         </div>
                                     </td>
                                     <td>
-                                        <span className='chipOutlineFilled'> workout,gym
-                                            work out </span>
+                                    <div className='userAvatar'>
+                                            <div className='userImg'>
+                                                <img src={userImg} alt="user" />
+                                            </div>
+                                            <div className='userContent'>
+                                                <div className='title'>Sonu Sharma</div>
+                                                <div className='subtitle'>9988776655</div>
+                                            </div>
+                                        </div>
                                     </td>
                                     <td> 04/1/2023</td>
                                     <td> 04/1/2023</td>
                                     <td> 40</td>
                                     <td>40</td>
-
-                                    <td>  <div className='userAvatar'>
-                                        <div className='userImg'>
-                                            <img src={userImg} alt="user" />
-                                        </div>
-                                        <div className='userContent'>
-                                            <div className='title'>Sonu Sharma</div>
-
-                                        </div>
-                                    </div></td>
                                     <td> ₹457.63</td>
                                     <td>  <span className='chipOutlineFilled done'> Active </span></td>
 
                                 </tr>
                                 <tr>
-
-
                                     <td>
                                         <div className='userAvatar'>
                                             <div className='userImg'>
@@ -247,30 +230,25 @@ const PtReport = () => {
                                         </div>
                                     </td>
                                     <td>
-                                        <span className='chipOutlineFilled'> workout,gym
-                                            work out </span>
+                                    <div className='userAvatar'>
+                                            <div className='userImg'>
+                                                <img src={userImg} alt="user" />
+                                            </div>
+                                            <div className='userContent'>
+                                                <div className='title'>Sonu Sharma</div>
+                                                <div className='subtitle'>9988776655</div>
+                                            </div>
+                                        </div>
                                     </td>
                                     <td> 04/1/2023</td>
                                     <td> 04/1/2023</td>
                                     <td> 40</td>
                                     <td>40</td>
-
-                                    <td>  <div className='userAvatar'>
-                                        <div className='userImg'>
-                                            <img src={userImg} alt="user" />
-                                        </div>
-                                        <div className='userContent'>
-                                            <div className='title'>Sonu Sharma</div>
-
-                                        </div>
-                                    </div></td>
                                     <td> ₹457.63</td>
                                     <td>  <span className='chipOutlineFilled done'> Active </span></td>
 
                                 </tr>
                                 <tr>
-
-
                                     <td>
                                         <div className='userAvatar'>
                                             <div className='userImg'>
@@ -283,30 +261,25 @@ const PtReport = () => {
                                         </div>
                                     </td>
                                     <td>
-                                        <span className='chipOutlineFilled'> workout,gym
-                                            work out </span>
+                                    <div className='userAvatar'>
+                                            <div className='userImg'>
+                                                <img src={userImg} alt="user" />
+                                            </div>
+                                            <div className='userContent'>
+                                                <div className='title'>Sonu Sharma</div>
+                                                <div className='subtitle'>9988776655</div>
+                                            </div>
+                                        </div>
                                     </td>
                                     <td> 04/1/2023</td>
                                     <td> 04/1/2023</td>
                                     <td> 40</td>
                                     <td>40</td>
-
-                                    <td>  <div className='userAvatar'>
-                                        <div className='userImg'>
-                                            <img src={userImg} alt="user" />
-                                        </div>
-                                        <div className='userContent'>
-                                            <div className='title'>Sonu Sharma</div>
-
-                                        </div>
-                                    </div></td>
                                     <td> ₹457.63</td>
                                     <td>  <span className='chipOutlineFilled done'> Active </span></td>
 
                                 </tr>
                                 <tr>
-
-
                                     <td>
                                         <div className='userAvatar'>
                                             <div className='userImg'>
@@ -319,23 +292,20 @@ const PtReport = () => {
                                         </div>
                                     </td>
                                     <td>
-                                        <span className='chipOutlineFilled'> workout,gym
-                                            work out </span>
+                                    <div className='userAvatar'>
+                                            <div className='userImg'>
+                                                <img src={userImg} alt="user" />
+                                            </div>
+                                            <div className='userContent'>
+                                                <div className='title'>Sonu Sharma</div>
+                                                <div className='subtitle'>9988776655</div>
+                                            </div>
+                                        </div>
                                     </td>
                                     <td> 04/1/2023</td>
                                     <td> 04/1/2023</td>
                                     <td> 40</td>
                                     <td>40</td>
-
-                                    <td>  <div className='userAvatar'>
-                                        <div className='userImg'>
-                                            <img src={userImg} alt="user" />
-                                        </div>
-                                        <div className='userContent'>
-                                            <div className='title'>Sonu Sharma</div>
-
-                                        </div>
-                                    </div></td>
                                     <td> ₹457.63</td>
                                     <td>  <span className='chipOutlineFilled done'> Active </span></td>
 
@@ -366,21 +336,14 @@ const PtReport = () => {
 
                         <div className={classNames("flex alignItems spaceBetween", styles.filterWrapper)}>
                             <div className={styles.sortBy}>Rows per page</div>
-                            <div className="selectDropdownBtn smallDropdown">
-                                <div className="selectedText">
-                                    6
-                                </div>
-                                <span className="material-icons"> expand_more </span>
-                                <div className="selectDropdown">
-                                    <div className="options static">All time</div>
-                                    <div className="options">Today</div>
-                                    <div className="options">Yesterday</div>
-                                    <div className="options">This month</div>
-                                    <div className="options">Last month</div>
-                                    <div className="options">This year</div>
-                                    <div className="options custom">Custom</div>
-                                </div>
+                            <div className={classNames("flex alignItems spaceBetween rowPerPageDropDown", styles.filterWrapper)}>
+                            <div className={styles.sortBy}>Rows per page</div>
+                            
+                            <div className="selectedText" >
+                                <CustomDropdown options={page} title="All" />
                             </div>
+                            {/* </div> */}
+                        </div>
                         </div>
 
                     </div>

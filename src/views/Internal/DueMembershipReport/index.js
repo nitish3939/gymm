@@ -20,6 +20,8 @@ const DueMembershipReport = () => {
 
     const handle = ["Handle1", "Handle2", "Handle3", "This month", "Last month", "This year", "Custom"];
     const lead = ["All time", "Today", "Yesterday", "This month", "Last month", "This year", "Custom"];
+    const page =["All", "10","20","50"]
+
     const [GenerateReport, setGenerateReport] = useState(false);
     return (
         <>
@@ -69,24 +71,18 @@ const DueMembershipReport = () => {
                 <div className='col-lg-8'>
                     <div className='categoryWrapper mb-3'>
 
-                        <div className="col-3" >
-                            {/* <span class="material-icons">
-                                calendar_month
-                            </span> */}
+                        <div className="CalendarWidthFixed" >
+                            
                              <CustomCalendarDropDown  />
                         </div>
                         <div className="" >
-                            {/* <span class="material-icons">
-                                calendar_month
-                            </span> */}
+                            
                             <CustomDropdown options={handle} title="Select Membership Type" />
                         </div>
 
 
                         <div className="" >
-                            {/* <span class="material-icons">
-                                calendar_month
-                            </span> */}
+                           
                             <CustomDropdown options={handle} title="Select Trainer" />
                         </div>
 
@@ -116,7 +112,7 @@ const DueMembershipReport = () => {
                     </div>
                 </div>
                 <div className='col-lg-4'>
-                    <div className='OutlineBtn  ml-auto mb-3' onClick={() => setadvanceFilter(true)}>
+                    <div className='OutlineBtn  ml-auto mb-2' onClick={() => setadvanceFilter(true)}>
                         <span class="material-icons">
                             filter_list
                         </span>
@@ -130,8 +126,8 @@ const DueMembershipReport = () => {
                         show={advanceFilter}
                         onHide={() => setadvanceFilter(false)}
                     />
-                    <div className='downloadReoprtBtn ml-auto' onClick={() => setGenerateReport(true)}>
-                        <span className="material-icons downloadIcon "> file_download </span>
+                    <div className='downloadReoprtBtn ml-auto mt-1' onClick={() => setGenerateReport(true)}>
+                        <span className="material-icons-outlined downloadIcon "> file_download </span>
                         Generate XLS Report
 
 
@@ -149,11 +145,11 @@ const DueMembershipReport = () => {
 
             </div>
             <div className='pb-3'>
-                <Form.Group className="mb-4 ModalFromCheckBox" >
+                <Form.Group className="mb-4 ModalFromCheckBox ms-3 mt-1" >
 
-                    <div className='checkbox '>
+                    <div className='checkbox gap-5'>
                         <Form.Check
-
+                            className='gap-4'
                             label="Without Resal Payment"
                             name="book1"
                             type="checkbox"
@@ -161,7 +157,7 @@ const DueMembershipReport = () => {
 
                         />
                         <Form.Check
-
+                            className='gap-4'
                             label="Exclude Upcoming Members"
                             name="book2"
                             type="checkbox"
@@ -194,22 +190,18 @@ const DueMembershipReport = () => {
                                     <th> Client Id</th>
                                     <th>Employees</th>
                                     <th>Membership Type</th>
-                                    <th> Plan Name</th>
-                                    <th> Package Start Date</th>
-                                    <th> Duration</th>
-                                    <th> Paid Amount</th>
-                                    <th> SGST</th>
-                                    <th> CGST</th>
-                                    <th> Payment Mode</th>
-                                    <th> Invoice Amount</th>
-                                    <th> Discount</th>
-                                    <th> Balance Amount</th>
-                                    <th>Close By</th>
-                                    <th> Handle By</th>
-                                    <th>Close Date</th>
-                                    <th> Payment Date</th>
+                                    <th> Start Date</th>
+                                    <th> End Date</th>
                                     <th> Assign Trainer</th>
-                                    <th> Sale Type</th>
+                                    <th> Total Sessions</th>
+                                    <th> Attended Sessions</th>
+                                    <th> Membership Price</th>
+                                    <th> Invoice Number</th>
+                                    <th> Discount Given</th>
+                                    <th> Balance Due</th>
+                                    <th>Close By</th>
+                                    <th> Payment Type</th>
+                                    
 
 
 
@@ -236,19 +228,23 @@ const DueMembershipReport = () => {
                                         <span className='chipOutlineFilled'> General Training,
                                             Personal Training</span>
                                     </td>
-                                    <td>
-                                        <span className='chipOutlineFilled'> workout,gym
-                                            work out	</span>
-                                    </td>
                                     <td> 02/10/2022</td>
-                                    <td> UTURN/2021-
-                                        2022/268</td>
-                                    <td> ₹6000.00</td>
-                                    <td> ₹457.63</td>
-                                    <td> ₹457.63</td>
-                                    <td> ₹457.63</td>
-                                    <td> ₹457.63</td>
+                                    <td> 02/10/2022</td>
+                                    <td>
+                                        <div className='userAvatar'>
+                                            <div className='userImg'>
+                                                <img src={userImg} alt="user" />
+                                            </div>
+                                            <div className='userContent'>
+                                                <div className='title'>Sonu Sharma</div>
 
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td> 50</td>
+                                    <td> 40</td>
+                                    <td> ₹457.63</td>
+                                    <td> 1234</td>
                                     <td> ₹457.63</td>
 
                                     <td> ₹457.63</td>
@@ -264,33 +260,9 @@ const DueMembershipReport = () => {
                                         </div>
                                     </td>
                                     <td>
-                                        <div className='userAvatar'>
-                                            <div className='userImg'>
-                                                <img src={userImg} alt="user" />
-                                            </div>
-                                            <div className='userContent'>
-                                                <div className='title'>Sonu Sharma</div>
-
-                                            </div>
-                                        </div>
+                                        Cash
                                     </td>
-                                    <td> 02/10/2022</td>
-                                    <td> 02/10/2022</td>
-                                    <td>
-                                        <div className='userAvatar'>
-                                            <div className='userImg'>
-                                                <img src={userImg} alt="user" />
-                                            </div>
-                                            <div className='userContent'>
-                                                <div className='title'>Sonu Sharma</div>
-
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span className='chipOutlineFilled'> workout,gym
-                                            work out	</span>
-                                    </td>
+                                   
 
                                 </tr>
                                 <tr>
@@ -313,19 +285,23 @@ const DueMembershipReport = () => {
                                         <span className='chipOutlineFilled'> General Training,
                                             Personal Training</span>
                                     </td>
-                                    <td>
-                                        <span className='chipOutlineFilled'> workout,gym
-                                            work out	</span>
-                                    </td>
                                     <td> 02/10/2022</td>
-                                    <td> UTURN/2021-
-                                        2022/268</td>
-                                    <td> ₹6000.00</td>
-                                    <td> ₹457.63</td>
-                                    <td> ₹457.63</td>
-                                    <td> ₹457.63</td>
-                                    <td> ₹457.63</td>
+                                    <td> 02/10/2022</td>
+                                    <td>
+                                        <div className='userAvatar'>
+                                            <div className='userImg'>
+                                                <img src={userImg} alt="user" />
+                                            </div>
+                                            <div className='userContent'>
+                                                <div className='title'>Sonu Sharma</div>
 
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td> 50</td>
+                                    <td> 40</td>
+                                    <td> ₹457.63</td>
+                                    <td> 1234</td>
                                     <td> ₹457.63</td>
 
                                     <td> ₹457.63</td>
@@ -341,33 +317,9 @@ const DueMembershipReport = () => {
                                         </div>
                                     </td>
                                     <td>
-                                        <div className='userAvatar'>
-                                            <div className='userImg'>
-                                                <img src={userImg} alt="user" />
-                                            </div>
-                                            <div className='userContent'>
-                                                <div className='title'>Sonu Sharma</div>
-
-                                            </div>
-                                        </div>
+                                        Cash
                                     </td>
-                                    <td> 02/10/2022</td>
-                                    <td> 02/10/2022</td>
-                                    <td>
-                                        <div className='userAvatar'>
-                                            <div className='userImg'>
-                                                <img src={userImg} alt="user" />
-                                            </div>
-                                            <div className='userContent'>
-                                                <div className='title'>Sonu Sharma</div>
-
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span className='chipOutlineFilled'> workout,gym
-                                            work out	</span>
-                                    </td>
+                                   
 
                                 </tr>
                                 <tr>
@@ -390,19 +342,23 @@ const DueMembershipReport = () => {
                                         <span className='chipOutlineFilled'> General Training,
                                             Personal Training</span>
                                     </td>
-                                    <td>
-                                        <span className='chipOutlineFilled'> workout,gym
-                                            work out	</span>
-                                    </td>
                                     <td> 02/10/2022</td>
-                                    <td> UTURN/2021-
-                                        2022/268</td>
-                                    <td> ₹6000.00</td>
-                                    <td> ₹457.63</td>
-                                    <td> ₹457.63</td>
-                                    <td> ₹457.63</td>
-                                    <td> ₹457.63</td>
+                                    <td> 02/10/2022</td>
+                                    <td>
+                                        <div className='userAvatar'>
+                                            <div className='userImg'>
+                                                <img src={userImg} alt="user" />
+                                            </div>
+                                            <div className='userContent'>
+                                                <div className='title'>Sonu Sharma</div>
 
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td> 50</td>
+                                    <td> 40</td>
+                                    <td> ₹457.63</td>
+                                    <td> 1234</td>
                                     <td> ₹457.63</td>
 
                                     <td> ₹457.63</td>
@@ -418,34 +374,9 @@ const DueMembershipReport = () => {
                                         </div>
                                     </td>
                                     <td>
-                                        <div className='userAvatar'>
-                                            <div className='userImg'>
-                                                <img src={userImg} alt="user" />
-                                            </div>
-                                            <div className='userContent'>
-                                                <div className='title'>Sonu Sharma</div>
-
-                                            </div>
-                                        </div>
+                                        Cash
                                     </td>
-                                    <td> 02/10/2022</td>
-                                    <td> 02/10/2022</td>
-                                    <td>
-                                        <div className='userAvatar'>
-                                            <div className='userImg'>
-                                                <img src={userImg} alt="user" />
-                                            </div>
-                                            <div className='userContent'>
-                                                <div className='title'>Sonu Sharma</div>
-
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span className='chipOutlineFilled'> workout,gym
-                                            work out	</span>
-                                    </td>
-
+                                   
                                 </tr>
 
 
@@ -472,21 +403,14 @@ const DueMembershipReport = () => {
 
                         <div className={classNames("flex alignItems spaceBetween", styles.filterWrapper)}>
                             <div className={styles.sortBy}>Rows per page</div>
-                            <div className="selectDropdownBtn smallDropdown">
-                                <div className="selectedText">
-                                    6
-                                </div>
-                                <span className="material-icons"> expand_more </span>
-                                <div className="selectDropdown">
-                                    <div className="options static">All time</div>
-                                    <div className="options">Today</div>
-                                    <div className="options">Yesterday</div>
-                                    <div className="options">This month</div>
-                                    <div className="options">Last month</div>
-                                    <div className="options">This year</div>
-                                    <div className="options custom">Custom</div>
-                                </div>
+                            <div className={classNames("flex alignItems spaceBetween rowPerPageDropDown", styles.filterWrapper)}>
+                            <div className={styles.sortBy}>Rows per page</div>
+                            
+                            <div className="selectedText" >
+                                <CustomDropdown options={page} title="All" />
                             </div>
+                            {/* </div> */}
+                        </div>
                         </div>
 
                     </div>

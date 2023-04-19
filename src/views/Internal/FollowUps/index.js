@@ -7,6 +7,9 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import ModalForm from "./../components/ModalForm";
 
+import CustomCalendarDropDown from '../components/CustomDropdown/CustomCalendarDropDown';
+
+
 const FollowUps = () => {
 
     const [ResponseModal, setResponseModal] = useState(false);
@@ -52,10 +55,10 @@ const FollowUps = () => {
                         <div className="selectedText " >
                             <CustomDropdown options={month} title="Assigned" />
                         </div>
-                        <div className="selectedText dropDownIfFirst" >
-                            <CustomDropdown options={month} title="Last 3 months" />
+                        <div className="selectedText dropDownIfFirst CalendarWidthFixed" >
+                            <CustomCalendarDropDown  title="Last 3 months" />
                         </div>
-
+                        
 
                         <div className={classNames("headerSearchWrapper member-search ", styles.dashboardSearch)}>
                             <input type="text" placeholder="Search Category" className="formControl" />

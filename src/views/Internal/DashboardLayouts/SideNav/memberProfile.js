@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import styles from "./sideNav.module.scss";
 import userImg from "./../../assets/images/profile-img.jpeg";
 import { Link } from "react-router-dom";
-
+import ModalForm from "../../components/ModalForm";
 
 import Tooltip from 'react-bootstrap/Tooltip';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
@@ -12,15 +12,23 @@ import { Modal, Button } from 'react-bootstrap';
 
 import { useLocation } from 'react-router-dom';
 
+import Form from 'react-bootstrap/Form';
 
 
 
 
-const SideNavMemberProfile = ({ isToggled, props }) => {
+const SideNavMemberProfile = ({ isToggled, props}) => {
+
+const [addToNewSale, setAddToNewSale] = useState(false);
+
 
 
 
     const [openLocationDropdown, setOpenLocationDropdown] = useState(false);
+
+
+     
+
 
     const locationDropdown = () => {
         setOpenLocationDropdown(!openLocationDropdown);
@@ -204,11 +212,16 @@ const  dashboardMain = () =>{
                     </span> */}
                 </div>
  
-                <div  className={classNames("addEnquiryBtn", styles.addNewSale )}>
+                <div onClick={() => setAddToNewSale(true)}  className={classNames("addEnquiryBtn", styles.addNewSale )}>
                     <span className="material-icons"> add </span>
                     <div className={classNames(styles.addNewSaleHide)}> Add to New Sale</div> 
+                    
                 </div>
-
+                <ModalForm
+                    name={'addToNewSale'}
+                    show={addToNewSale}
+                    onHide={() => setAddToNewSale(false)}
+                />
                     <ul className={styles.sideBarNavInnerWrapper}>
                         <li   className={classNames( location.pathname === '/memberEditProfile' ? styles.activeNavManu : '', styles.linkItem,) }>
                          <OverlayTrigger  trigger="hover" className={styles.toolTipHide}  placement="right" delay={{ show: 250, hide: 400 }} overlay={renderTooltip}>   
@@ -225,10 +238,10 @@ const  dashboardMain = () =>{
                         </OverlayTrigger>
                             {/* <span className={styles.alertNotification}>9</span> */}
                         </li>
-                        <li  className={classNames(location.pathname === '/enquiries' ? styles.activeNavManu : '', styles.linkItem) }>
+                        <li  className={classNames(location.pathname === '/MembersMemberships' ? styles.activeNavManu : '', styles.linkItem) }>
                         <OverlayTrigger  trigger="hover" className={styles.toolTipHide}  placement="right" delay={{ show: 250, hide: 400 }} overlay={renderTooltipTwo}>   
                          
-                            <Link to="/enquiries" className={styles.link}>
+                            <Link to="/MembersMemberships" className={styles.link}>
                                 <span className={classNames("material-icons", styles.linkIcon)}>
                                     person
                                 </span>
@@ -237,10 +250,10 @@ const  dashboardMain = () =>{
                         </OverlayTrigger>
                             
                         </li>
-                        <li className={classNames(location.pathname === '/followups' ? styles.activeNavManu : '', styles.linkItem,) }>
+                        <li className={classNames(location.pathname === '/MemberFollowUps' ? styles.activeNavManu : '', styles.linkItem,) }>
                         <OverlayTrigger  trigger="hover" className={styles.toolTipHide}  placement="right" delay={{ show: 250, hide: 400 }} overlay={renderTooltipThree}>   
                          
-                            <Link to="/followups" className={styles.link}>
+                            <Link to="/MemberFollowUps" className={styles.link}>
                                 <span className={classNames("material-icons", styles.linkIcon)}>
                                     replay
                                 </span>
@@ -250,10 +263,10 @@ const  dashboardMain = () =>{
                         </li>
 
 
-                        <li  className={classNames(location.pathname === '/feedback-Management' ? styles.activeNavManu : '', styles.linkItem,) }>
+                        <li  className={classNames(location.pathname === '/paymentsHistory' ? styles.activeNavManu : '', styles.linkItem,) }>
                            <OverlayTrigger  trigger="hover" className={styles.toolTipHide}  placement="right" delay={{ show: 250, hide: 400 }} overlay={renderTooltipFour}>   
                          
-                            <Link to="/feedback-Management" className={styles.link}>
+                            <Link to="/paymentsHistory" className={styles.link}>
                                 <span className={classNames("material-icons", styles.linkIcon)}>
                                    payments
                                 </span>
@@ -263,10 +276,10 @@ const  dashboardMain = () =>{
                         </li>
 
 
-                        <li  className={classNames(location.pathname === '/diet-plan-management' ? styles.activeNavManu : '', styles.linkItem,) }>
+                        <li  className={classNames(location.pathname === '/reportCard' ? styles.activeNavManu : '', styles.linkItem,) }>
                         <OverlayTrigger  trigger="hover" className={styles.toolTipHide}  placement="right" delay={{ show: 250, hide: 400 }} overlay={renderTooltipFive}>   
                          
-                            <Link to="/diet-plan-management" className={styles.link}>
+                            <Link to="/reportCard" className={styles.link}>
                                 <span className={classNames("material-icons", styles.linkIcon)}>
                                assessment
                                 </span>
@@ -277,10 +290,10 @@ const  dashboardMain = () =>{
                     
 
             
-                        <li className={classNames(location.pathname === '/payments' ? styles.activeNavManu : '', styles.linkItem,) }>
+                        <li className={classNames(location.pathname === '/workoutHistory' ? styles.activeNavManu : '', styles.linkItem,) }>
                         <OverlayTrigger  trigger="hover" className={styles.toolTipHide}  placement="right" delay={{ show: 250, hide: 400 }} overlay={renderTooltipSix}>   
                          
-                            <Link to="/payments" className={styles.link}>
+                            <Link to="/workoutHistory" className={styles.link}>
                                 <span className={classNames("material-icons", styles.linkIcon)}>
                                 fitness_center
                                 </span>
@@ -288,10 +301,10 @@ const  dashboardMain = () =>{
                             </Link>
                             </OverlayTrigger>
                         </li>
-                        <li  className={classNames(location.pathname === '/expense-management' ? styles.activeNavManu : '', styles.linkItem,) }>
+                        <li  className={classNames(location.pathname === '/uploadDocuments' ? styles.activeNavManu : '', styles.linkItem,) }>
                         <OverlayTrigger  trigger="hover" className={styles.toolTipHide}  placement="right" delay={{ show: 250, hide: 400 }} overlay={renderTooltipSeven}>   
                          
-                            <Link to="/expense-management" className={styles.link}>
+                            <Link to="/uploadDocuments" className={styles.link}>
                                 <span className={classNames("material-icons", styles.linkIcon)}>
                                 text_snippet
                                 </span>
@@ -299,10 +312,10 @@ const  dashboardMain = () =>{
                             </Link>
                             </OverlayTrigger>
                         </li>
-                        <li  className={classNames(location.pathname === '/expense-management' ? styles.activeNavManu : '', styles.linkItem,) }>
+                        <li  className={classNames(location.pathname === '/Attendance' ? styles.activeNavManu : '', styles.linkItem,) }>
                         <OverlayTrigger  trigger="hover" className={styles.toolTipHide}  placement="right" delay={{ show: 250, hide: 400 }} overlay={renderTooltipEight}>   
                          
-                            <Link to="/expense-management" className={styles.link}>
+                            <Link to="/Attendance" className={styles.link}>
                                 <span className={classNames("material-icons", styles.linkIcon)}>
                                 calendar_month
                                 </span>
@@ -310,10 +323,10 @@ const  dashboardMain = () =>{
                             </Link>
                             </OverlayTrigger>
                         </li>
-                        <li  className={classNames(location.pathname === '/expense-management' ? styles.activeNavManu : '', styles.linkItem,) }>
+                        <li  className={classNames(location.pathname === '/Biometric' ? styles.activeNavManu : '', styles.linkItem,) }>
                         <OverlayTrigger  trigger="hover" className={styles.toolTipHide}  placement="right" delay={{ show: 250, hide: 400 }} overlay={renderTooltipNine}>   
                          
-                            <Link to="/expense-management" className={styles.link}>
+                            <Link to="/Biometric" className={styles.link}>
                                 <span className={classNames("material-icons", styles.linkIcon)}>
                                fingerprints
                                 </span>

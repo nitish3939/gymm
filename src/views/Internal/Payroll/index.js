@@ -28,6 +28,7 @@ const Payroll = () => {
 
     const handle = ["Handle1", "Handle2", "Handle3", "This month", "Last month", "This year", "Custom"];
     const lead = ["All time", "Today", "Yesterday", "This month", "Last month", "This year", "Custom"];
+    const page =["All", "10", "20", "50"]
 
 
     const [advancePaid, setadvancePaid] = useState(false);
@@ -136,7 +137,7 @@ const Payroll = () => {
             </div>
 
             {PaidEmployee && (
-                <section className={classNames('section', styles.followUpsWrapper)}>
+                <section className={classNames('section payRolls' , styles.followUpsWrapper)}>
                     <h3 className='subtitle' >Total Paid Employees (540)</h3>
 
 
@@ -213,16 +214,11 @@ const Payroll = () => {
                                             </span> */}
                                                     <div id="linkabkeDropdwon" className='dottedbtn' >
                                                         <DropdownButton title="more_vert" drop='bottom' className="material-icons ">
-                                                            <Dropdown.Item as="button" className='item1' onClick={() => setaddMember(true)}>Add Member</Dropdown.Item>
+                                                            <Dropdown.Item as="button" className='item1' onClick={() => setpayroll(true)}>Add Payroll</Dropdown.Item>
                                                             <Dropdown.Item as="button" className='item2' onClick={() => setdeleteModal(true)}>Delete</Dropdown.Item>
                                                             <Dropdown.Item as="button" className='item3' onClick={() => setEditMemberDetails(true)} > Edit Member Details</Dropdown.Item>
                                                         </DropdownButton>
-                                                        <ModalForm
-
-                                                            name={'addMember'}
-                                                            show={addMember}
-                                                            onHide={() => setaddMember(false)}
-                                                        />
+                                                       
                                                         <ModalForm
 
                                                             name={'deleteModal'}
@@ -269,10 +265,14 @@ const Payroll = () => {
                                 </ul>
                             </div>
 
-                            <div className={classNames("flex alignItems spaceBetween", styles.filterWrapper)}>
-                                <div className={styles.sortBy}>Rows per page</div>
-                                <CustomDropdown options={handle} title="Select Row" />
+                            <div className={classNames("flex alignItems spaceBetween rowPerPageDropDown", styles.filterWrapper)}>
+                            <div className={styles.sortBy}>Rows per page</div>
+                            
+                            <div className="selectedText" >
+                                <CustomDropdown options={page} title="All" />
                             </div>
+                            {/* </div> */}
+                        </div>
 
                         </div>
                     </div>
@@ -414,10 +414,14 @@ const Payroll = () => {
                                 </ul>
                             </div>
 
-                            <div className={classNames("flex alignItems spaceBetween", styles.filterWrapper)}>
-                                <div className={styles.sortBy}>Rows per page</div>
-                                <CustomDropdown options={handle} title="Select Row" />
+                            <div className={classNames("flex alignItems spaceBetween rowPerPageDropDown", styles.filterWrapper)}>
+                            <div className={styles.sortBy}>Rows per page</div>
+                            
+                            <div className="selectedText" >
+                                <CustomDropdown options={page} title="All" />
                             </div>
+                            {/* </div> */}
+                        </div>
 
                         </div>
                     </div>
@@ -558,10 +562,14 @@ const Payroll = () => {
                                 </ul>
                             </div>
 
-                            <div className={classNames("flex alignItems spaceBetween", styles.filterWrapper)}>
-                                <div className={styles.sortBy}>Rows per page</div>
-                                <CustomDropdown options={handle} title="Select Row" />
+                            <div className={classNames("flex alignItems spaceBetween rowPerPageDropDown", styles.filterWrapper)}>
+                            <div className={styles.sortBy}>Rows per page</div>
+                            
+                            <div className="selectedText" >
+                                <CustomDropdown options={page} title="All" />
                             </div>
+                            {/* </div> */}
+                        </div>
 
                         </div>
                     </div>

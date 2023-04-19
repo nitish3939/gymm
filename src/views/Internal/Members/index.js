@@ -178,7 +178,6 @@ const Members = () => {
                                 <tr>
                                     <th>
                                        <Form.Group className=" ModalFromCheckBox" >
-
                                             <div className='checkbox '>
                                                 <Form.Check label="" name="book1" type="checkbox" />
                                             </div>
@@ -250,8 +249,8 @@ const Members = () => {
                                             <div id="linkabkeDropdwon" className='dottedbtn' >
                                                 <DropdownButton title="more_vert" drop='bottom' className="material-icons ">
 
-                                               <Link to="/memberEditProfile">      <Dropdown.Item  as="button" className='item1' >View Profile </Dropdown.Item></Link>
-                                                    <Dropdown.Item as="button" className='item1' >Edit Profile</Dropdown.Item>
+                                               <Link to="/viewProfile">      <Dropdown.Item  as="button" className='item1' >View Profile </Dropdown.Item></Link>
+                                               <Link to="/memberEditProfile">   <Dropdown.Item as="button" className='item1' >Edit Profile</Dropdown.Item></Link>
 
                                                 </DropdownButton>
                                             </div>

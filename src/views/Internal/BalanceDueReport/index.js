@@ -27,7 +27,7 @@ const BalanceDueReport = () => {
 
     const handle = ["Handle1", "Handle2", "Handle3", "This month", "Last month", "This year", "Custom"];
     const lead = ["All time", "Today", "Yesterday", "This month", "Last month", "This year", "Custom"];
-
+    const page = ["All", "1", "2", "3", "4", "5", "6"];
     return (
         <>
             <h1 className="h1 flex spaceBetween alignItems">
@@ -92,7 +92,7 @@ const BalanceDueReport = () => {
 
 
                     <div className='downloadReoprtBtn ml-auto' onClick={() => setGenerateReport(true)}>
-                        <span className="material-icons downloadIcon ">file_download  </span>
+                        <span className="material-icons-outlined downloadIcon ">file_download  </span>
                         Generate XLS Report
 
 
@@ -231,23 +231,13 @@ const BalanceDueReport = () => {
                             </ul>
                         </div>
 
-                        <div className={classNames("flex alignItems spaceBetween", styles.filterWrapper)}>
+                        <div className={classNames("flex alignItems spaceBetween rowPerPageDropDown", styles.filterWrapper)}>
                             <div className={styles.sortBy}>Rows per page</div>
-                            <div className="selectDropdownBtn smallDropdown">
-                                <div className="selectedText">
-                                    6
-                                </div>
-                                <span className="material-icons"> expand_more </span>
-                                <div className="selectDropdown">
-                                    <div className="options static">All time</div>
-                                    <div className="options">Today</div>
-                                    <div className="options">Yesterday</div>
-                                    <div className="options">This month</div>
-                                    <div className="options">Last month</div>
-                                    <div className="options">This year</div>
-                                    <div className="options custom">Custom</div>
-                                </div>
+                            
+                            <div className="selectedText" >
+                                <CustomDropdown options={page} title="All" />
                             </div>
+                            {/* </div> */}
                         </div>
 
                     </div>
@@ -438,23 +428,13 @@ const BalanceDueReport = () => {
                             </ul>
                         </div>
 
-                        <div className={classNames("flex alignItems spaceBetween", styles.filterWrapper)}>
+                        <div className={classNames("flex alignItems spaceBetween rowPerPageDropDown", styles.filterWrapper)}>
                             <div className={styles.sortBy}>Rows per page</div>
-                            <div className="selectDropdownBtn smallDropdown">
-                                <div className="selectedText">
-                                    6
-                                </div>
-                                <span className="material-icons"> expand_more </span>
-                                <div className="selectDropdown">
-                                    <div className="options static">All time</div>
-                                    <div className="options">Today</div>
-                                    <div className="options">Yesterday</div>
-                                    <div className="options">This month</div>
-                                    <div className="options">Last month</div>
-                                    <div className="options">This year</div>
-                                    <div className="options custom">Custom</div>
-                                </div>
+                            
+                            <div className="selectedText" >
+                                <CustomDropdown options={page} title="All" />
                             </div>
+                            {/* </div> */}
                         </div>
 
                     </div>

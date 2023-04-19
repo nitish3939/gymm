@@ -21,7 +21,7 @@ const SalesReport = () => {
     const [GenerateReport, setGenerateReport] = useState(false);
     const handle = ["Handle1", "Handle2", "Handle3", "This month", "Last month", "This year", "Custom"];
     const lead = ["All time", "Today", "Yesterday", "This month", "Last month", "This year", "Custom"];
-
+    const page= ["All", "10", "20", "50"]
     return (
         <>
             <h1 className="h1 flex spaceBetween alignItems">
@@ -29,7 +29,7 @@ const SalesReport = () => {
 
             </h1>
 
-            <div className='enquiriesBtnWrapper'>
+            <div className='enquiriesBtnWrapper salesReportCards'>
 
                 <div className='enquiriesBtn'>
                     <div className='enquiryIcon'>
@@ -210,7 +210,7 @@ const SalesReport = () => {
 
 
                         <div className='downloadReoprtBtn ml-auto' onClick={() => setGenerateReport(true)}>
-                        <span className="material-icons downloadIcon "> file_download </span>
+                        <span className="material-icons-outlined downloadIcon "> file_download </span>
                         Download XLS Report
 
 
@@ -254,11 +254,20 @@ const SalesReport = () => {
                                     <th> Plan Name</th>
                                     <th> Package Start Date</th>
                                     <th> Duration</th>
+                                    <th> Invoice Number</th>
                                     <th> Paid Amount</th>
                                     <th> SGST</th>
                                     <th> CGST</th>
                                     <th> Payment Mode</th>
-
+                                    <th>Invoice Amount</th>
+                                    <th>Discount</th>
+                                    <th>Balance Amount</th>
+                                    <th>Closed By</th>
+                                    <th>Handle By</th>
+                                    <th>Close Date</th>
+                                    <th>Payment Date</th>
+                                    <th>Assign Trainer</th>
+                                    <th>Sale Types</th>
 
 
                                 </tr>
@@ -291,10 +300,57 @@ const SalesReport = () => {
                                     <td> 02/10/2022</td>
                                     <td> UTURN/2021-
                                         2022/268</td>
+                                    <td> 1234 </td>
                                     <td> ₹6000.00</td>
                                     <td> ₹457.63</td>
                                     <td> ₹457.63</td>
                                     <td> ₹457.63</td>
+                                    <td>₹457.63</td>
+                                  
+
+                                    <td> ₹457.63</td>
+
+                                    <td> ₹457.63</td>
+                                    <td>
+                                        <div className='userAvatar'>
+                                            <div className='userImg'>
+                                                <img src={userImg} alt="user" />
+                                            </div>
+                                            <div className='userContent'>
+                                                <div className='title'>Sonu Sharma</div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div className='userAvatar'>
+                                            <div className='userImg'>
+                                                <img src={userImg} alt="user" />
+                                            </div>
+                                            <div className='userContent'>
+                                                <div className='title'>Sonu Sharma</div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td> 02/10/2022</td>
+                                    <td> 02/10/2022</td>
+                                    <td>
+                                        <div className='userAvatar'>
+                                            <div className='userImg'>
+                                                <img src={userImg} alt="user" />
+                                            </div>
+                                            <div className='userContent'>
+                                                <div className='title'>Sonu Sharma</div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span className='chipOutlineFilled'> workout,gym
+                                            work out	</span>
+                                    </td>
+
 
                                 </tr>
                                 <tr>
@@ -324,10 +380,55 @@ const SalesReport = () => {
                                     <td> 02/10/2022</td>
                                     <td> UTURN/2021-
                                         2022/268</td>
+                                    <td>1234 </td>
                                     <td> ₹6000.00</td>
                                     <td> ₹457.63</td>
                                     <td> ₹457.63</td>
                                     <td> ₹457.63</td>
+                                    <td> ₹457.63</td>
+
+                                    <td> ₹457.63</td>
+
+                                    <td> ₹457.63</td>
+                                    <td>
+                                        <div className='userAvatar'>
+                                            <div className='userImg'>
+                                                <img src={userImg} alt="user" />
+                                            </div>
+                                            <div className='userContent'>
+                                                <div className='title'>Sonu Sharma</div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div className='userAvatar'>
+                                            <div className='userImg'>
+                                                <img src={userImg} alt="user" />
+                                            </div>
+                                            <div className='userContent'>
+                                                <div className='title'>Sonu Sharma</div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td> 02/10/2022</td>
+                                    <td> 02/10/2022</td>
+                                    <td>
+                                        <div className='userAvatar'>
+                                            <div className='userImg'>
+                                                <img src={userImg} alt="user" />
+                                            </div>
+                                            <div className='userContent'>
+                                                <div className='title'>Sonu Sharma</div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span className='chipOutlineFilled'> workout,gym
+                                            work out	</span>
+                                    </td>
 
                                 </tr>
                                 <tr>
@@ -357,10 +458,55 @@ const SalesReport = () => {
                                     <td> 02/10/2022</td>
                                     <td> UTURN/2021-
                                         2022/268</td>
+                                    <td>1234 </td>
                                     <td> ₹6000.00</td>
                                     <td> ₹457.63</td>
                                     <td> ₹457.63</td>
                                     <td> ₹457.63</td>
+                                    <td> ₹457.63</td>
+
+                                    <td> ₹457.63</td>
+
+                                    <td> ₹457.63</td>
+                                    <td>
+                                        <div className='userAvatar'>
+                                            <div className='userImg'>
+                                                <img src={userImg} alt="user" />
+                                            </div>
+                                            <div className='userContent'>
+                                                <div className='title'>Sonu Sharma</div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div className='userAvatar'>
+                                            <div className='userImg'>
+                                                <img src={userImg} alt="user" />
+                                            </div>
+                                            <div className='userContent'>
+                                                <div className='title'>Sonu Sharma</div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td> 02/10/2022</td>
+                                    <td> 02/10/2022</td>
+                                    <td>
+                                        <div className='userAvatar'>
+                                            <div className='userImg'>
+                                                <img src={userImg} alt="user" />
+                                            </div>
+                                            <div className='userContent'>
+                                                <div className='title'>Sonu Sharma</div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span className='chipOutlineFilled'> workout,gym
+                                            work out	</span>
+                                    </td>
 
                                 </tr>
                                 <tr>
@@ -390,11 +536,55 @@ const SalesReport = () => {
                                     <td> 02/10/2022</td>
                                     <td> UTURN/2021-
                                         2022/268</td>
+                                    <td>1234 </td>    
                                     <td> ₹6000.00</td>
                                     <td> ₹457.63</td>
                                     <td> ₹457.63</td>
                                     <td> ₹457.63</td>
+                                    <td> ₹457.63</td>
 
+                                    <td> ₹457.63</td>
+
+                                    <td> ₹457.63</td>
+                                    <td>
+                                        <div className='userAvatar'>
+                                            <div className='userImg'>
+                                                <img src={userImg} alt="user" />
+                                            </div>
+                                            <div className='userContent'>
+                                                <div className='title'>Sonu Sharma</div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div className='userAvatar'>
+                                            <div className='userImg'>
+                                                <img src={userImg} alt="user" />
+                                            </div>
+                                            <div className='userContent'>
+                                                <div className='title'>Sonu Sharma</div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td> 02/10/2022</td>
+                                    <td> 02/10/2022</td>
+                                    <td>
+                                        <div className='userAvatar'>
+                                            <div className='userImg'>
+                                                <img src={userImg} alt="user" />
+                                            </div>
+                                            <div className='userContent'>
+                                                <div className='title'>Sonu Sharma</div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span className='chipOutlineFilled'> workout,gym
+                                            work out	</span>
+                                    </td>
                                 </tr>
 
 
@@ -421,21 +611,14 @@ const SalesReport = () => {
 
                         <div className={classNames("flex alignItems spaceBetween", styles.filterWrapper)}>
                             <div className={styles.sortBy}>Rows per page</div>
-                            <div className="selectDropdownBtn smallDropdown">
-                                <div className="selectedText">
-                                    6
-                                </div>
-                                <span className="material-icons"> expand_more </span>
-                                <div className="selectDropdown">
-                                    <div className="options static">All time</div>
-                                    <div className="options">Today</div>
-                                    <div className="options">Yesterday</div>
-                                    <div className="options">This month</div>
-                                    <div className="options">Last month</div>
-                                    <div className="options">This year</div>
-                                    <div className="options custom">Custom</div>
-                                </div>
+                            <div className={classNames("flex alignItems spaceBetween rowPerPageDropDown", styles.filterWrapper)}>
+                            <div className={styles.sortBy}>Rows per page</div>
+                            
+                            <div className="selectedText" >
+                                <CustomDropdown options={page} title="All" />
                             </div>
+                            {/* </div> */}
+                        </div>
                         </div>
 
                     </div>

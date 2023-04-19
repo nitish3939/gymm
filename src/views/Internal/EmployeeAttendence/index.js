@@ -26,8 +26,7 @@ const EmployeeAttendance = () => {
     // const [modal, setModal] = React.useState(false);
 
     const handle = ["Handle1", "Handle2", "Handle3", "This month", "Last month", "This year", "Custom"];
-
-
+    const page =["App ", "10", "20", "50"]
 
 
     const [AttendanceLog, setAttendanceLog] = useState(true);
@@ -82,7 +81,7 @@ const EmployeeAttendance = () => {
 
             <div className='row text-end'>
                 <div className='col-lg-12'>
-                    <div className='categoryWrapper'>
+                    <div className='categoryWrapper mb-3'>
 
                         <div className=" dropDownIfFirst" >
                             <CustomDropdown options={handle} title="Employees" />
@@ -199,10 +198,14 @@ const EmployeeAttendance = () => {
                                 </ul>
                             </div>
 
-                            <div className={classNames("flex alignItems spaceBetween", styles.filterWrapper)}>
-                                <div className={styles.sortBy}>Rows per page</div>
-                                <CustomDropdown options={handle} title="Select Row" />
+                            <div className={classNames("flex alignItems spaceBetween rowPerPageDropDown", styles.filterWrapper)}>
+                            <div className={styles.sortBy}>Rows per page</div>
+                            
+                            <div className="selectedText" >
+                                <CustomDropdown options={page} title="All" />
                             </div>
+                            {/* </div> */}
+                        </div>
 
                         </div>
                     </div>
@@ -221,7 +224,7 @@ const EmployeeAttendance = () => {
 
 
                     </div>
-                    <section className={classNames('section', styles.followUpsWrapper)}>
+                    <section className={classNames('section employeeAttendence', styles.followUpsWrapper)}>
                         <h3 className='subtitle' >Total Absent Employees (540)</h3>
 
 
@@ -237,7 +240,7 @@ const EmployeeAttendance = () => {
                                             <th> Employee ID</th>
                                             <th>Employee</th>
 
-                                            <th>Attendence</th>
+                                            <th className='d-flex justify-content-center'>Attendence</th>
 
 
 
@@ -259,7 +262,7 @@ const EmployeeAttendance = () => {
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <div className='d-flex gap-3'>
+                                                    <div className='d-flex gap-3 justify-content-end pe-5'>
                                                         <span className='FormFillBtn'>Punch In</span>
                                                         <span className='FormFillBtn   '>Punch In</span>
                                                     </div>
@@ -294,10 +297,14 @@ const EmployeeAttendance = () => {
                                     </ul>
                                 </div>
 
-                                <div className={classNames("flex alignItems spaceBetween", styles.filterWrapper)}>
-                                    <div className={styles.sortBy}>Rows per page</div>
-                                    <CustomDropdown options={handle} title="Select Row" />
-                                </div>
+                        <div className={classNames("flex alignItems spaceBetween rowPerPageDropDown", styles.filterWrapper)}>
+                            <div className={styles.sortBy}>Rows per page</div>
+                            
+                            <div className="selectedText" >
+                                <CustomDropdown options={page} title="All" />
+                            </div>
+                            {/* </div> */}
+                        </div>
 
                             </div>
                         </div>

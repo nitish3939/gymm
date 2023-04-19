@@ -21,7 +21,7 @@ const ExpiredMemberReport = () => {
 
     const handle = ["Handle1", "Handle2", "Handle3", "This month", "Last month", "This year", "Custom"];
     const lead = ["All time", "Today", "Yesterday", "This month", "Last month", "This year", "Custom"];
-
+    const page =["All", "10", "20", "50"]
     return (
         <>
             <h1 className="h1 flex spaceBetween alignItems">
@@ -131,7 +131,7 @@ const ExpiredMemberReport = () => {
                     </div>
                 </div>
                 <div className='col-lg-4'>
-                    <div className='OutlineBtn  ml-auto mb-3' onClick={() => setadvanceFilter(true)}>
+                    <div className='OutlineBtn  ml-auto mb-2' onClick={() => setadvanceFilter(true)}>
                         <span class="material-icons">
                             filter_list
                         </span>
@@ -145,9 +145,9 @@ const ExpiredMemberReport = () => {
                         show={advanceFilter}
                         onHide={() => setadvanceFilter(false)}
                     />
-                    <div className='downloadReoprtBtn ml-auto' onClick={() => setGenerateReport(true)}>
-                        <span className="material-icons downloadIcon "> file_download </span>
-                        Download XLS Report
+                    <div className='downloadReoprtBtn ml-auto mt-1' onClick={() => setGenerateReport(true)}>
+                        <span className="material-icons-outlined downloadIcon "> file_download </span>
+                        Generate XLS Report
 
 
                             
@@ -199,7 +199,7 @@ const ExpiredMemberReport = () => {
                                     <th> Closed By</th>
                                     <th>Membership Price</th>
                                     <th> Discount</th>
-                                    <th> Balance Amount</th>
+                                    <th> Balance Due</th>
                                    
                                    
 
@@ -411,21 +411,14 @@ const ExpiredMemberReport = () => {
 
                         <div className={classNames("flex alignItems spaceBetween", styles.filterWrapper)}>
                             <div className={styles.sortBy}>Rows per page</div>
-                            <div className="selectDropdownBtn smallDropdown">
-                                <div className="selectedText">
-                                    6
-                                </div>
-                                <span className="material-icons"> expand_more </span>
-                                <div className="selectDropdown">
-                                    <div className="options static">All time</div>
-                                    <div className="options">Today</div>
-                                    <div className="options">Yesterday</div>
-                                    <div className="options">This month</div>
-                                    <div className="options">Last month</div>
-                                    <div className="options">This year</div>
-                                    <div className="options custom">Custom</div>
-                                </div>
+                            <div className={classNames("flex alignItems spaceBetween rowPerPageDropDown", styles.filterWrapper)}>
+                            <div className={styles.sortBy}>Rows per page</div>
+                            
+                            <div className="selectedText" >
+                                <CustomDropdown options={page} title="All" />
                             </div>
+                            {/* </div> */}
+                        </div>
                         </div>
 
                     </div>

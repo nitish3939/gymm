@@ -7,6 +7,8 @@ import LeadTypes from "../components/LeadTypes";
 import MembersCounting from "../components/MembersCounting";
 import FinancialAnalytics from "../components/FinancialAnalytics";
 import CustomDropdown from "./../components/CustomDropdown";
+import CustomCalendarWithRange from './../components/CustomDropdown/CustomCalendarWithRange.js';
+//import CustomCalendarDropDown from './../components/CustomDropdown/CustomCalendarDropDown.js/'
 
 
 import ModalForm from "./../components/ModalForm";
@@ -31,8 +33,15 @@ const Dashboard = () => {
     const [scheduleModal, setscheduleModal] = useState(false);
 
 
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-
+    const handleSearchChange = (event) => {
+        if (event.target.value.length > 0) {
+          setIsDropdownOpen(true);
+        } else {
+          setIsDropdownOpen(false);
+        }
+      };
 
     const options = ["All time", "Today", "Yesterday", "This month", "Last month", "This year", "Custom"];
     const followups = ["Balance Due", "Enquiry", "Feedback", "Membership Renewal", "Trial", "Birthday","Anniversary"];
@@ -43,7 +52,33 @@ const Dashboard = () => {
             <h1 className="h1 pt-1">Dashboard</h1>
             <div className={classNames("flex alignItems spaceBetween pt-1", styles.filterWrapperTop)}>
                 <div className={classNames("headerSearchWrapper", styles.dashboardSearch)}>
-                    <input type="text" placeholder="Search & Create “New Sales”" className="formControl" />
+                    <input  onChange={handleSearchChange} type="text" placeholder="Search & Create “New Sales”" className="formControl" />
+                    {isDropdownOpen && (
+        <div className="inSearchDropDown">
+             
+             {[...Array(6)].map(() =>
+                   <div className='inSearchDropDownInner d-flex gap-2 spaceBetween pe-2 align-items-center' > 
+                       <div>
+                                        <div className='userAvatar'>
+                                            <div className='userImg'>
+                                                <img src={userImg} alt="user" />
+                                            </div>
+                                            <div className='userContent'>
+                                                <div className='title'>Sonu Sharma</div>
+                                                <div className='subtitle'>9988776655</div>
+                                            </div>
+                                        </div>
+                       </div>
+                     
+                       <div className='d-inline-flex gap-2'>
+                            <button className='FormFillBtn BtnInner1'> View Profile</button>
+                            <button className='FormFillBtn BtnInner2'> Renewal</button>
+                        </div> 
+                        
+                    </div>
+                    )}
+        </div>
+      )}
                     <div className='searchBtnInner'>  
                         <button onClick={() => setAddNewSale(true)} className='FormFillBtn BtnInner1'> New Sale</button>
                         <button onClick={() => setNewEnquiry(true)} className='FormFillBtn BtnInner2'> New Enquiry</button>
@@ -68,11 +103,14 @@ const Dashboard = () => {
 
 
                 </div>
-
-                <div className={classNames("flex alignItems", styles.filterWrapper)}>
+             <div className=''>  
+                <div className={classNames("flex alignItems CustomCalendarWithRange", styles.filterWrapper)}>
                     <div className={styles.sortBy}>Sort by</div>
-                    <CustomDropdown options={options} title="Last 3 months" />
+                    
+                    <CustomCalendarWithRange   title={"dd/mm/yyyy"}/> 
+                    
                 </div>
+             </div>
             </div>
             <section className={classNames('section', styles.followUpsWrapper)}>
                 <h3 className='subtitle'>Follow Ups (20)</h3>
@@ -326,6 +364,9 @@ const Dashboard = () => {
                                 <li className='paginationItem'>
                                     3
                                 </li>
+                                <div className='paginationMoreHoriz'>
+                                    <span class="material-icons-outlined"> more_horiz</span>
+                                </div>
                                 <li className='paginationItem'>
                                     4
                                 </li>

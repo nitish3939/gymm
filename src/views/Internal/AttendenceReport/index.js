@@ -19,6 +19,9 @@ const AttendenceReport = () => {
 
     const handle = ["Handle1", "Handle2", "Handle3", "This month", "Last month", "This year", "Custom"];
     const lead = ["All time", "Today", "Yesterday", "This month", "Last month", "This year", "Custom"];
+    const page =["All", "10","20","50"]
+
+
     const [GenerateReport, setGenerateReport] = useState(false);
     return (
         <>
@@ -67,7 +70,7 @@ const AttendenceReport = () => {
                             {/* <span className="material-icons closeIcon"> close </span> */}
                         </div>
                         <div className='downloadReoprtBtn ml-auto' onClick={() => setGenerateReport(true)}>
-                        <span className="material-icons downloadIcon "> file_download </span>
+                        <span className="material-icons-outlined downloadIcon "> file_download </span>
                         Generate XLS Report
 
 
@@ -91,13 +94,14 @@ const AttendenceReport = () => {
                 <div className='tableWrapperOuter'>
                     <div className='tableHeading'>
                         <h2 className='h2'>Attendence Report</h2>
-                        <div className='mr-auto ms-3 d-flex gap-3 align-items-center'>
+                        {/* <div className='mr-auto ms-3 d-flex gap-3 align-items-center'>
                             <span class="material-icons">
                                 chevron_left
                             </span>
                             <span class="material-icons">
                                 chevron_right
-                            </span></div>
+                            </span>
+                            </div> */}
 
                     </div>
                     <div className='tableWrapper'>
@@ -289,22 +293,15 @@ const AttendenceReport = () => {
                         </div>
 
                         <div className={classNames("flex alignItems spaceBetween", styles.filterWrapper)}>
+                          
+                            <div className={classNames("flex alignItems spaceBetween rowPerPageDropDown", styles.filterWrapper)}>
                             <div className={styles.sortBy}>Rows per page</div>
-                            <div className="selectDropdownBtn smallDropdown">
-                                <div className="selectedText">
-                                    6
-                                </div>
-                                <span className="material-icons"> expand_more </span>
-                                <div className="selectDropdown">
-                                    <div className="options static">All time</div>
-                                    <div className="options">Today</div>
-                                    <div className="options">Yesterday</div>
-                                    <div className="options">This month</div>
-                                    <div className="options">Last month</div>
-                                    <div className="options">This year</div>
-                                    <div className="options custom">Custom</div>
-                                </div>
+                            
+                            <div className="selectedText" >
+                                <CustomDropdown options={page} title="All" />
                             </div>
+                            {/* </div> */}
+                        </div>
                         </div>
 
                     </div>

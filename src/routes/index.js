@@ -35,6 +35,16 @@ const Login = lazy(() => import('./../views/Internal/Login/login'));
 
 const MemberProfileLayout = lazy(() => import('../views/Internal/DashboardLayouts/MemberProfileLayout.js'));
 const MemberEditProfile = lazy(() => import('../views/Internal/MembersProfile'));
+const ViewProfile = lazy  (() =>  import('../views/Internal/MembersProfile/viewProfile.js'));
+const MembersMemberships = lazy  (() =>  import('../views/Internal/MembersProfile/memberships.js'));
+const MemberFollowUps = lazy  (() =>  import('../views/Internal/MembersProfile/followUps.js'));
+const PaymentsHistory = lazy (() =>  import('../views/Internal/MembersProfile/paymentsHistory.js'));
+const UploadDocuments = lazy (() =>  import('../views/Internal/MembersProfile/uploadDocuments.js'));
+const Biometric = lazy (() =>  import('../views/Internal/MembersProfile/biometric.js'));
+const Attendance = lazy (() =>  import('../views/Internal/MembersProfile/attendance.js'));
+const WorkoutHistory = lazy (() =>  import('../views/Internal/MembersProfile/workoutHistory.js'));
+const ReportCard = lazy (() =>  import('../views/Internal/MembersProfile/reportCard.js'));
+const Configurations  = lazy(() => import('../views/Internal/DashboardLayouts/configurations.js'));
 
 
 function MainRoutes() {
@@ -80,14 +90,27 @@ function MainRoutes() {
                     <Route exact path="/expense-management" element={<ExpenseManagement />} />
 
 
-
+                    
 
 
                 </Route>
 
                 <Route exact path='/' element={<MemberProfileLayout />}>
+                <Route exact path="/ViewProfile" element={<ViewProfile />} />
                 <Route exact path="/memberEditProfile" element={<MemberEditProfile />} />
+                <Route exact path="/MembersMemberships" element={<MembersMemberships />} /> 
+                <Route exact path='/MemberFollowUps' element={<MemberFollowUps />} />                
+                <Route exact path='/PaymentsHistory' element={<PaymentsHistory/>} />
+                <Route exact path='/reportCard' element={<ReportCard/>} />
+                <Route exact path='/UploadDocuments' element={<UploadDocuments/>} />
+                <Route exact path='/Biometric' element={<Biometric/>} />
+                <Route exact path='/Attendance' element={< Attendance />} />
+                <Route exact path='/workoutHistory' element={<WorkoutHistory />} />
+                <Route exact path='/configurations' element={<Configurations/>} />
+
                 </Route>
+
+                
             </Routes>
         </>
     );

@@ -4,11 +4,11 @@ import ModalForm from "../ModalForm";
 import Form from 'react-bootstrap/Form';
 
 
-import DatePicker from "react-datepicker";
+import Datepicker from "react-datepicker";
+//import "react-datepicker/dist/react-datepicker.css";
 
 
-
-const CustomCalendarDropDown = ({title}) => {
+const CustomCalendarDropDownWithTime = ({title}) => {
 
 
 
@@ -26,7 +26,8 @@ const CustomCalendarDropDown = ({title}) => {
 
 
 
-   
+
+
 
     return (
         <>
@@ -39,10 +40,9 @@ const CustomCalendarDropDown = ({title}) => {
                             {/* <Form.Label>Start Date </Form.Label> */}
                             
                             
-      <DatePicker
+      <Datepicker
        ref={calRef}
-        showIcon={true}
-        //showIcon={<span class="material-icons calendarIcon" htmlFor='fromdateApply'>calendar_month_icon</span>}
+        showIcon
         selected={startDate}
         onChange={date => setStartDate(date)}
         peekNextMonth
@@ -52,9 +52,10 @@ const CustomCalendarDropDown = ({title}) => {
         className="form-control datePickerClass"
         shouldCloseOnSelect={false}
         monthsShown={1}
-       
+        showTimeInput
+        dateFormat="MM/dd/yyyy h:mm aa"
       //isClearable
-       placeholderText={" dd/mm/yyyy"}
+      placeholderText=" dd/mm/yyyy"
     //   customInput={<input placeholder='dd/mm/yyyy' className='form-control '  />}
       id={'fromdateApply'}
       
@@ -64,7 +65,7 @@ const CustomCalendarDropDown = ({title}) => {
 
 
 
-     <div className='  '>
+     <div className=' '>
         <div className='col-4'>
 </div>
        <div className='col-8 gap-2 d-flex datePickerChildren'> 
@@ -85,7 +86,7 @@ const CustomCalendarDropDown = ({title}) => {
         </button>
         </div>
       </div>
-</DatePicker>
+</Datepicker>
 
       <span class="material-icons calendarIcon" htmlFor='fromdateApply'>calendar_month_icon</span>
 
@@ -110,10 +111,6 @@ const CustomCalendarDropDown = ({title}) => {
 
 
 
-export default CustomCalendarDropDown
 
 
-
-
-
-
+export default CustomCalendarDropDownWithTime

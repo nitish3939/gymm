@@ -57,7 +57,7 @@ const DietPlanManagement = () => {
                 Diet Plan Management
                 <div className='addEnquiryBtn' onClick={() => setCreateDietPlan(true)}>
                     <span className="material-icons"> add </span>
-                    Add Workout Card
+                    Create Diet Plan
                 </div>
                 {/* <ModalForm
                     name={'dietPlan'}
